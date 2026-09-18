@@ -1,0 +1,1666 @@
+{
+  "_fixture": "Données de maquette (design/preview), jamais servies en production.",
+  "date": "2026-09-18",
+  "generatedAt": "2026-09-18T04:06:00Z",
+  "stats": {
+    "analysees": 214,
+    "pays": 41,
+    "langues": 19,
+    "flux_ok": 168,
+    "flux_echec": 2,
+    "gdelt_ok": true,
+    "clusters": 180,
+    "corroborees": 24,
+    "qualifiees": 31
+  },
+  "alerts": [],
+  "candidates": [
+    {
+      "id": "ae3779b97f4a7c15",
+      "category": "Santé",
+      "original": {
+        "title": "Guinea worm cases reach historic low",
+        "summary": "The parasite affected 3.5 million people a year in the 1980s. The eradication campaign led with local communities has brought it down to a handful of human cases recorded worldwide.",
+        "lang": "en",
+        "url": "https://cartercenter.org/exemple/1"
+      },
+      "fr": {
+        "title": "Le ver de Guinée n'a plus infecté qu'une poignée de personnes cette année",
+        "summary": "Le parasite touchait 3,5 millions de personnes par an dans les années 1980. La campagne d'éradication menée avec les communautés locales le ramène aujourd'hui à quelques cas humains recensés dans le monde.",
+        "machine": true
+      },
+      "en": {
+        "title": "Guinea worm cases reach historic low",
+        "summary": "The parasite affected 3.5 million people a year in the 1980s. The eradication campaign led with local communities has brought it down to a handful of human cases recorded worldwide.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "The Carter Center",
+        "domain": "cartercenter.org",
+        "country": "US"
+      },
+      "publishedAt": "2026-09-18T00:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn1/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "TD",
+        "ET",
+        "SS"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 9,
+        "pays": 6,
+        "sources": [
+          {
+            "titre": "Guinea worm cases reach historic low",
+            "url": "https://cartercenter.org/exemple/1",
+            "media": "The Carter Center",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-18T00:00:00.000Z",
+            "proprietaire": "the-carter-center",
+            "via": "rss"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 2)",
+            "url": "https://media-1.example/1/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T23:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 3)",
+            "url": "https://media-2.example/1/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T22:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 4)",
+            "url": "https://media-3.example/1/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T21:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 5)",
+            "url": "https://media-4.example/1/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-17T20:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 6)",
+            "url": "https://media-5.example/1/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-17T19:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 7)",
+            "url": "https://media-6.example/1/6",
+            "media": "Média 7",
+            "pays": "US",
+            "langue": "fr",
+            "date": "2026-09-17T18:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 8)",
+            "url": "https://media-7.example/1/7",
+            "media": "Média 8",
+            "pays": "GB",
+            "langue": "es",
+            "date": "2026-09-17T17:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Guinea worm cases reach historic low (reprise 9)",
+            "url": "https://media-8.example/1/8",
+            "media": "Média 9",
+            "pays": "FR",
+            "langue": "de",
+            "date": "2026-09-17T16:00:00.000Z",
+            "proprietaire": "media-8",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "The Carter Center",
+          "url": "https://cartercenter.org/exemple/1"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "the-carter-center",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7",
+            "media-8"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Santé",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "TD",
+          "ET",
+          "SS"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "cases",
+        "guinea",
+        "historic",
+        "reach",
+        "worm"
+      ]
+    },
+    {
+      "id": "4c6ef372fe94f82a",
+      "category": "Nature",
+      "original": {
+        "title": "Mountain gorilla numbers pass 1,000",
+        "summary": "The only great ape species whose population is growing, driven by habitat protection and anti-poaching patrols.",
+        "lang": "en",
+        "url": "https://iucn.org/exemple/2"
+      },
+      "fr": {
+        "title": "Les gorilles de montagne dépassent le millier d'individus",
+        "summary": "Seule espèce de grand singe dont la population augmente, portée par la protection des habitats et les patrouilles anti-braconnage.",
+        "machine": true
+      },
+      "en": {
+        "title": "Mountain gorilla numbers pass 1,000",
+        "summary": "The only great ape species whose population is growing, driven by habitat protection and anti-poaching patrols.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "UICN",
+        "domain": "iucn.org",
+        "country": "CH"
+      },
+      "publishedAt": "2026-09-17T21:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn2/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "RW",
+        "UG",
+        "CD"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 7,
+        "pays": 5,
+        "sources": [
+          {
+            "titre": "Mountain gorilla numbers pass 1,000",
+            "url": "https://iucn.org/exemple/2",
+            "media": "UICN",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-17T21:00:00.000Z",
+            "proprietaire": "uicn",
+            "via": "rss"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 2)",
+            "url": "https://media-1.example/2/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T20:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 3)",
+            "url": "https://media-2.example/2/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T19:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 4)",
+            "url": "https://media-3.example/2/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T18:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 5)",
+            "url": "https://media-4.example/2/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-17T17:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 6)",
+            "url": "https://media-5.example/2/5",
+            "media": "Média 6",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-17T16:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mountain gorilla numbers pass 1,000 (reprise 7)",
+            "url": "https://media-6.example/2/6",
+            "media": "Média 7",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T15:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "UICN",
+          "url": "https://iucn.org/exemple/2"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "uicn",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Nature",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "RW",
+          "UG",
+          "CD"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "gorilla",
+        "mountain",
+        "numbers",
+        "pass"
+      ]
+    },
+    {
+      "id": "eaa66d2c7ddf743f",
+      "category": "Science",
+      "original": {
+        "title": "Ozone layer on track to recover",
+        "summary": "UN-mandated experts confirm the Antarctic hole should close by mid-century if commitments hold.",
+        "lang": "en",
+        "url": "https://unep.org/exemple/3"
+      },
+      "fr": {
+        "title": "La couche d'ozone est en voie de résorption complète",
+        "summary": "Les experts mandatés par l'ONU confirment que le trou antarctique devrait se refermer d'ici le milieu du siècle si les engagements tiennent.",
+        "machine": true
+      },
+      "en": {
+        "title": "Ozone layer on track to recover",
+        "summary": "UN-mandated experts confirm the Antarctic hole should close by mid-century if commitments hold.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "PNUE",
+        "domain": "unep.org",
+        "country": "KE"
+      },
+      "publishedAt": "2026-09-17T19:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn3/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 12,
+        "pays": 8,
+        "sources": [
+          {
+            "titre": "Ozone layer on track to recover",
+            "url": "https://unep.org/exemple/3",
+            "media": "PNUE",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-17T19:00:00.000Z",
+            "proprietaire": "pnue",
+            "via": "rss"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 2)",
+            "url": "https://media-1.example/3/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T18:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 3)",
+            "url": "https://media-2.example/3/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T17:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 4)",
+            "url": "https://media-3.example/3/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T16:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 5)",
+            "url": "https://media-4.example/3/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-17T15:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 6)",
+            "url": "https://media-5.example/3/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-17T14:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 7)",
+            "url": "https://media-6.example/3/6",
+            "media": "Média 7",
+            "pays": "IN",
+            "langue": "fr",
+            "date": "2026-09-17T13:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 8)",
+            "url": "https://media-7.example/3/7",
+            "media": "Média 8",
+            "pays": "JP",
+            "langue": "es",
+            "date": "2026-09-17T12:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 9)",
+            "url": "https://media-8.example/3/8",
+            "media": "Média 9",
+            "pays": "US",
+            "langue": "de",
+            "date": "2026-09-17T11:00:00.000Z",
+            "proprietaire": "media-8",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 10)",
+            "url": "https://media-9.example/3/9",
+            "media": "Média 10",
+            "pays": "GB",
+            "langue": "pt",
+            "date": "2026-09-17T10:00:00.000Z",
+            "proprietaire": "media-9",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 11)",
+            "url": "https://media-10.example/3/10",
+            "media": "Média 11",
+            "pays": "FR",
+            "langue": "en",
+            "date": "2026-09-17T09:00:00.000Z",
+            "proprietaire": "media-10",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Ozone layer on track to recover (reprise 12)",
+            "url": "https://media-11.example/3/11",
+            "media": "Média 12",
+            "pays": "DE",
+            "langue": "fr",
+            "date": "2026-09-17T08:00:00.000Z",
+            "proprietaire": "media-11",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "PNUE",
+          "url": "https://unep.org/exemple/3"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "pnue",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7",
+            "media-8",
+            "media-9",
+            "media-10",
+            "media-11"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR",
+            "IN",
+            "JP"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Science",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "layer",
+        "ozone",
+        "recover",
+        "track"
+      ]
+    },
+    {
+      "id": "88dde6e5fd29f054",
+      "category": "Santé",
+      "original": {
+        "title": "R21 malaria vaccine rollout expands",
+        "summary": "Following the WHO recommendation, the first mass vaccination campaigns target children in the most exposed areas.",
+        "lang": "en",
+        "url": "https://who.int/exemple/4"
+      },
+      "fr": {
+        "title": "Le vaccin antipaludique R21 déployé dans de nouveaux pays",
+        "summary": "Après la recommandation de l'OMS, les premières campagnes de vaccination de masse ciblent les enfants des zones les plus exposées.",
+        "machine": true
+      },
+      "en": {
+        "title": "R21 malaria vaccine rollout expands",
+        "summary": "Following the WHO recommendation, the first mass vaccination campaigns target children in the most exposed areas.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "OMS",
+        "domain": "who.int",
+        "country": "CH"
+      },
+      "publishedAt": "2026-09-17T17:00:00.000Z",
+      "image": null,
+      "imageStatus": "absent",
+      "places": [],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 10,
+        "pays": 7,
+        "sources": [
+          {
+            "titre": "R21 malaria vaccine rollout expands",
+            "url": "https://who.int/exemple/4",
+            "media": "OMS",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-17T17:00:00.000Z",
+            "proprietaire": "oms",
+            "via": "rss"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 2)",
+            "url": "https://media-1.example/4/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T16:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 3)",
+            "url": "https://media-2.example/4/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T15:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 4)",
+            "url": "https://media-3.example/4/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T14:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 5)",
+            "url": "https://media-4.example/4/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-17T13:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 6)",
+            "url": "https://media-5.example/4/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-17T12:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 7)",
+            "url": "https://media-6.example/4/6",
+            "media": "Média 7",
+            "pays": "IN",
+            "langue": "fr",
+            "date": "2026-09-17T11:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 8)",
+            "url": "https://media-7.example/4/7",
+            "media": "Média 8",
+            "pays": "US",
+            "langue": "es",
+            "date": "2026-09-17T10:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 9)",
+            "url": "https://media-8.example/4/8",
+            "media": "Média 9",
+            "pays": "GB",
+            "langue": "de",
+            "date": "2026-09-17T09:00:00.000Z",
+            "proprietaire": "media-8",
+            "via": "gdelt"
+          },
+          {
+            "titre": "R21 malaria vaccine rollout expands (reprise 10)",
+            "url": "https://media-9.example/4/9",
+            "media": "Média 10",
+            "pays": "FR",
+            "langue": "pt",
+            "date": "2026-09-17T08:00:00.000Z",
+            "proprietaire": "media-9",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "Organisation mondiale de la santé",
+          "url": "https://who.int/exemple/4"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "oms",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7",
+            "media-8",
+            "media-9"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR",
+            "IN"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Santé",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "expands",
+        "malaria",
+        "rollout",
+        "vaccine"
+      ]
+    },
+    {
+      "id": "2715609f7c746c69",
+      "category": "Océans",
+      "original": {
+        "title": "Blue whales return to South Georgia",
+        "summary": "Almost gone from the area after industrial whaling, they are once again regularly observed by scientific surveys.",
+        "lang": "en",
+        "url": "https://bas.ac.uk/exemple/5"
+      },
+      "fr": {
+        "title": "Les baleines bleues sont de retour autour de la Géorgie du Sud",
+        "summary": "Quasiment disparues de la zone après la chasse industrielle, elles y sont à nouveau observées régulièrement par les campagnes scientifiques.",
+        "machine": true
+      },
+      "en": {
+        "title": "Blue whales return to South Georgia",
+        "summary": "Almost gone from the area after industrial whaling, they are once again regularly observed by scientific surveys.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "British Antarctic Survey",
+        "domain": "bas.ac.uk",
+        "country": "GB"
+      },
+      "publishedAt": "2026-09-17T15:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn5/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "GS"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 4,
+        "pays": 3,
+        "sources": [
+          {
+            "titre": "Blue whales return to South Georgia",
+            "url": "https://bas.ac.uk/exemple/5",
+            "media": "British Antarctic Survey",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-17T15:00:00.000Z",
+            "proprietaire": "british-antarctic-survey",
+            "via": "rss"
+          },
+          {
+            "titre": "Blue whales return to South Georgia (reprise 2)",
+            "url": "https://media-1.example/5/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T14:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Blue whales return to South Georgia (reprise 3)",
+            "url": "https://media-2.example/5/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T13:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Blue whales return to South Georgia (reprise 4)",
+            "url": "https://media-3.example/5/3",
+            "media": "Média 4",
+            "pays": "US",
+            "langue": "de",
+            "date": "2026-09-17T12:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "british-antarctic-survey",
+            "media-1",
+            "media-2",
+            "media-3"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Océans",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "GS"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "blue",
+        "georgia",
+        "return",
+        "south",
+        "whales"
+      ]
+    },
+    {
+      "id": "c54cda58fbbee87e",
+      "category": "Société",
+      "original": {
+        "title": "Cidade portuguesa torna transportes gratuitos",
+        "summary": "Full free fares apply from this month to the whole municipal network, after a year of trial.",
+        "lang": "pt",
+        "url": "https://publico.pt/exemple/6"
+      },
+      "fr": {
+        "title": "Une ville portugaise rend ses transports gratuits pour tous ses habitants",
+        "summary": "La gratuité totale s'applique depuis ce mois-ci à l'ensemble du réseau municipal, après un an d'expérimentation.",
+        "machine": true
+      },
+      "en": {
+        "title": "Portuguese city makes public transport free for all residents",
+        "summary": "Full free fares apply from this month to the whole municipal network, after a year of trial.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "Público",
+        "domain": "publico.pt",
+        "country": "PT"
+      },
+      "publishedAt": "2026-09-17T13:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn6/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "PT"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 5,
+        "pays": 2,
+        "sources": [
+          {
+            "titre": "Cidade portuguesa torna transportes gratuitos",
+            "url": "https://publico.pt/exemple/6",
+            "media": "Público",
+            "pays": "US",
+            "langue": "pt",
+            "date": "2026-09-17T13:00:00.000Z",
+            "proprietaire": "público",
+            "via": "rss"
+          },
+          {
+            "titre": "Cidade portuguesa torna transportes gratuitos (reprise 2)",
+            "url": "https://media-1.example/6/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T12:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Cidade portuguesa torna transportes gratuitos (reprise 3)",
+            "url": "https://media-2.example/6/2",
+            "media": "Média 3",
+            "pays": "US",
+            "langue": "es",
+            "date": "2026-09-17T11:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Cidade portuguesa torna transportes gratuitos (reprise 4)",
+            "url": "https://media-3.example/6/3",
+            "media": "Média 4",
+            "pays": "GB",
+            "langue": "de",
+            "date": "2026-09-17T10:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Cidade portuguesa torna transportes gratuitos (reprise 5)",
+            "url": "https://media-4.example/6/4",
+            "media": "Média 5",
+            "pays": "US",
+            "langue": "pt",
+            "date": "2026-09-17T09:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "público",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4"
+          ],
+          "pays_liste": [
+            "US",
+            "GB"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Société",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "PT"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "city",
+        "free",
+        "makes",
+        "portuguese",
+        "public",
+        "residents",
+        "transport"
+      ]
+    },
+    {
+      "id": "638454127b096493",
+      "category": "Science",
+      "original": {
+        "title": "脊髄損傷の患者が歩行を回復",
+        "summary": "Two out of four patients regained assisted walking after a transplant of reprogrammed stem cells, according to the published clinical trial.",
+        "lang": "ja",
+        "url": "https://nhk.or.jp/exemple/7"
+      },
+      "fr": {
+        "title": "Une équipe japonaise restaure la mobilité après une lésion médullaire",
+        "summary": "Deux patients sur quatre ont retrouvé une marche assistée après une greffe de cellules souches reprogrammées, selon l'essai clinique publié.",
+        "machine": true
+      },
+      "en": {
+        "title": "Japanese team restores mobility after spinal cord injury",
+        "summary": "Two out of four patients regained assisted walking after a transplant of reprogrammed stem cells, according to the published clinical trial.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "NHK",
+        "domain": "nhk.or.jp",
+        "country": "JP"
+      },
+      "publishedAt": "2026-09-17T11:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn7/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "JP"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 8,
+        "pays": 6,
+        "sources": [
+          {
+            "titre": "脊髄損傷の患者が歩行を回復",
+            "url": "https://nhk.or.jp/exemple/7",
+            "media": "NHK",
+            "pays": "US",
+            "langue": "ja",
+            "date": "2026-09-17T11:00:00.000Z",
+            "proprietaire": "nhk",
+            "via": "rss"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 2)",
+            "url": "https://media-1.example/7/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T10:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 3)",
+            "url": "https://media-2.example/7/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T09:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 4)",
+            "url": "https://media-3.example/7/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T08:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 5)",
+            "url": "https://media-4.example/7/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-17T07:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 6)",
+            "url": "https://media-5.example/7/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-17T06:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 7)",
+            "url": "https://media-6.example/7/6",
+            "media": "Média 7",
+            "pays": "US",
+            "langue": "fr",
+            "date": "2026-09-17T05:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "脊髄損傷の患者が歩行を回復 (reprise 8)",
+            "url": "https://media-7.example/7/7",
+            "media": "Média 8",
+            "pays": "GB",
+            "langue": "es",
+            "date": "2026-09-17T04:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "Université de Keio",
+          "url": "https://nhk.or.jp/exemple/7"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "nhk",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Science",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "JP"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "after",
+        "cord",
+        "injury",
+        "japanese",
+        "mobility",
+        "restores",
+        "spinal",
+        "team"
+      ]
+    },
+    {
+      "id": "01bbcdcbfa53e0a8",
+      "category": "Nature",
+      "original": {
+        "title": "Mata Atlântica volta a crescer",
+        "summary": "Annual satellite monitoring records a net gain in forest cover, a first since measurements began.",
+        "lang": "pt",
+        "url": "https://folha.uol.com.br/exemple/8"
+      },
+      "fr": {
+        "title": "La forêt atlantique brésilienne regagne du terrain pour la première fois",
+        "summary": "Le suivi satellitaire annuel enregistre un gain net de couvert forestier, une première depuis le début des mesures.",
+        "machine": true
+      },
+      "en": {
+        "title": "Brazil's Atlantic Forest grows back for the first time",
+        "summary": "Annual satellite monitoring records a net gain in forest cover, a first since measurements began.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "Folha de S.Paulo",
+        "domain": "folha.uol.com.br",
+        "country": "BR"
+      },
+      "publishedAt": "2026-09-17T09:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn8/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "BR"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 6,
+        "pays": 4,
+        "sources": [
+          {
+            "titre": "Mata Atlântica volta a crescer",
+            "url": "https://folha.uol.com.br/exemple/8",
+            "media": "Folha de S.Paulo",
+            "pays": "US",
+            "langue": "pt",
+            "date": "2026-09-17T09:00:00.000Z",
+            "proprietaire": "folha-de-s.paulo",
+            "via": "rss"
+          },
+          {
+            "titre": "Mata Atlântica volta a crescer (reprise 2)",
+            "url": "https://media-1.example/8/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T08:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mata Atlântica volta a crescer (reprise 3)",
+            "url": "https://media-2.example/8/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T07:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mata Atlântica volta a crescer (reprise 4)",
+            "url": "https://media-3.example/8/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-17T06:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mata Atlântica volta a crescer (reprise 5)",
+            "url": "https://media-4.example/8/4",
+            "media": "Média 5",
+            "pays": "US",
+            "langue": "pt",
+            "date": "2026-09-17T05:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Mata Atlântica volta a crescer (reprise 6)",
+            "url": "https://media-5.example/8/5",
+            "media": "Média 6",
+            "pays": "GB",
+            "langue": "en",
+            "date": "2026-09-17T04:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "folha-de-s.paulo",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Nature",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "BR"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "atlantic",
+        "back",
+        "brazil",
+        "first",
+        "forest",
+        "grows",
+        "time"
+      ]
+    },
+    {
+      "id": "9ff34785799e5cbd",
+      "category": "Santé",
+      "original": {
+        "title": "मोतियाबिंद कार्यक्रम से हज़ारों को दृष्टि",
+        "summary": "Free operations in rural districts have restored sight to more than ten thousand patients since January, according to the published tally.",
+        "lang": "hi",
+        "url": "https://thehindu.com/exemple/9"
+      },
+      "fr": {
+        "title": "Un programme de cataracte rend la vue à des milliers de personnes âgées",
+        "summary": "Les opérations gratuites menées dans les districts ruraux ont rendu la vue à plus de dix mille patients depuis janvier, selon le bilan publié.",
+        "machine": true
+      },
+      "en": {
+        "title": "Cataract programme restores sight to thousands of elderly people",
+        "summary": "Free operations in rural districts have restored sight to more than ten thousand patients since January, according to the published tally.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "The Hindu",
+        "domain": "thehindu.com",
+        "country": "IN"
+      },
+      "publishedAt": "2026-09-17T07:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn9/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "IN"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 4,
+        "pays": 3,
+        "sources": [
+          {
+            "titre": "मोतियाबिंद कार्यक्रम से हज़ारों को दृष्टि",
+            "url": "https://thehindu.com/exemple/9",
+            "media": "The Hindu",
+            "pays": "US",
+            "langue": "hi",
+            "date": "2026-09-17T07:00:00.000Z",
+            "proprietaire": "the-hindu",
+            "via": "rss"
+          },
+          {
+            "titre": "मोतियाबिंद कार्यक्रम से हज़ारों को दृष्टि (reprise 2)",
+            "url": "https://media-1.example/9/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T06:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "मोतियाबिंद कार्यक्रम से हज़ारों को दृष्टि (reprise 3)",
+            "url": "https://media-2.example/9/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T05:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "मोतियाबिंद कार्यक्रम से हज़ारों को दृष्टि (reprise 4)",
+            "url": "https://media-3.example/9/3",
+            "media": "Média 4",
+            "pays": "US",
+            "langue": "de",
+            "date": "2026-09-17T04:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "the-hindu",
+            "media-1",
+            "media-2",
+            "media-3"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Santé",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "IN"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "cataract",
+        "elderly",
+        "people",
+        "programme",
+        "restores",
+        "sight",
+        "thousands"
+      ]
+    },
+    {
+      "id": "3e2ac13ef8e8d8d2",
+      "category": "Culture",
+      "original": {
+        "title": "Мобильные библиотеки добрались до сёл",
+        "summary": "Twelve fitted vehicles now serve villages without a library every week, with free loans.",
+        "lang": "ru",
+        "url": "https://example-kz.org/exemple/10"
+      },
+      "fr": {
+        "title": "Un réseau de bibliothèques mobiles dessert les zones rurales isolées",
+        "summary": "Douze véhicules aménagés desservent désormais chaque semaine des villages sans bibliothèque, avec des prêts gratuits.",
+        "machine": true
+      },
+      "en": {
+        "title": "Mobile library network reaches isolated rural areas",
+        "summary": "Twelve fitted vehicles now serve villages without a library every week, with free loans.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "Agence locale",
+        "domain": "example-kz.org",
+        "country": "KZ"
+      },
+      "publishedAt": "2026-09-17T05:00:00.000Z",
+      "image": null,
+      "imageStatus": "absent",
+      "places": [
+        "KZ"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 3,
+        "pays": 3,
+        "sources": [
+          {
+            "titre": "Мобильные библиотеки добрались до сёл",
+            "url": "https://example-kz.org/exemple/10",
+            "media": "Agence locale",
+            "pays": "US",
+            "langue": "ru",
+            "date": "2026-09-17T05:00:00.000Z",
+            "proprietaire": "agence-locale",
+            "via": "rss"
+          },
+          {
+            "titre": "Мобильные библиотеки добрались до сёл (reprise 2)",
+            "url": "https://media-1.example/10/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-17T04:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Мобильные библиотеки добрались до сёл (reprise 3)",
+            "url": "https://media-2.example/10/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-17T03:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-18T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "agence-locale",
+            "media-1",
+            "media-2"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Culture",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "KZ"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-18T04:02:00Z"
+      },
+      "fingerprint": [
+        "areas",
+        "isolated",
+        "library",
+        "mobile",
+        "network",
+        "reaches",
+        "rural"
+      ]
+    }
+  ]
+}

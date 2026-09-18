@@ -1,0 +1,210 @@
+{
+  "_fixture": "Données de maquette (design/preview), jamais servies en production.",
+  "date": "2026-09-18",
+  "startedAt": "2026-09-18T04:00:02Z",
+  "finishedAt": "2026-09-18T04:06:00Z",
+  "dryRun": false,
+  "stages": [
+    {
+      "name": "collecte:rss",
+      "in": 170,
+      "out": 2260,
+      "notes": [
+        "flux en échec : Prensa Libre (XML illisible)",
+        "flux en échec : Positivr (pas de réponse)"
+      ],
+      "ms": 14800
+    },
+    {
+      "name": "collecte:gdelt",
+      "in": 13,
+      "out": 2440,
+      "notes": [],
+      "ms": 70400
+    },
+    {
+      "name": "collecte:social",
+      "in": 0,
+      "out": 37,
+      "notes": [
+        "Reddit : ignoré (REDDIT_CLIENT_ID / REDDIT_CLIENT_SECRET absents)"
+      ],
+      "ms": 3600
+    },
+    {
+      "name": "collecte:dedup",
+      "in": 4737,
+      "out": 214,
+      "notes": [
+        "2 liens d'agrégateurs écartés"
+      ],
+      "ms": 40
+    },
+    {
+      "name": "recoupement:clusters",
+      "in": 214,
+      "out": 180,
+      "notes": [],
+      "ms": 120
+    },
+    {
+      "name": "recoupement:local",
+      "in": 180,
+      "out": 22,
+      "notes": [],
+      "ms": 300
+    },
+    {
+      "name": "qualification",
+      "in": 180,
+      "out": 31,
+      "notes": [
+        "modèle : claude-opus-5"
+      ],
+      "ms": 96000
+    },
+    {
+      "name": "recoupement:gdelt",
+      "in": 31,
+      "out": 24,
+      "notes": [
+        "31 requêtes GDELT de recoupement (0 sans réponse), 19 clusters renforcés"
+      ],
+      "ms": 165000
+    },
+    {
+      "name": "edition",
+      "in": 31,
+      "out": 10,
+      "notes": [
+        "24 éligibles, 10 retenues, 14 écartées pour diversité"
+      ],
+      "ms": 20
+    },
+    {
+      "name": "traduction",
+      "in": 10,
+      "out": 10,
+      "notes": [
+        "10 pages Open Graph lues, 0 refusées par robots.txt, 8 nouvelles traduites"
+      ],
+      "ms": 8200
+    }
+  ],
+  "rejected": [
+    {
+      "stage": "qualification",
+      "title": "Le parti au pouvoir remporte les élections municipales",
+      "url": "https://example.org/1",
+      "reason": "non universelle : Politique"
+    },
+    {
+      "stage": "qualification",
+      "title": "La bourse de Tokyo bat un record historique",
+      "url": "https://example.org/2",
+      "reason": "non universelle : Économique partisan"
+    },
+    {
+      "stage": "qualification",
+      "title": "Un plan de 2 milliards annoncé pour les hôpitaux",
+      "url": "https://example.org/3",
+      "reason": "benefice non concret ou non advenu"
+    },
+    {
+      "stage": "edition",
+      "title": "Un nouveau parc national inauguré au Chili",
+      "url": "https://example.org/4",
+      "reason": "corroboration insuffisante (2 redactions, 1 pays)"
+    },
+    {
+      "stage": "edition",
+      "title": "Une nouvelle campagne contre la polio au Pakistan",
+      "url": "https://example.org/5",
+      "reason": "diversite : deja 2 en Santé"
+    }
+  ],
+  "alerts": [],
+  "stats": {
+    "analysees": 214,
+    "pays": 41,
+    "langues": 19,
+    "flux_ok": 168,
+    "flux_echec": 2,
+    "gdelt_ok": true,
+    "clusters": 180,
+    "corroborees": 24,
+    "qualifiees": 31
+  },
+  "candidates": [
+    {
+      "id": "ae3779b97f4a7c15",
+      "title": "Le ver de Guinée n'a plus infecté qu'une poignée de personnes cette année",
+      "niveau": "confirme",
+      "categorie": "Santé",
+      "media": "The Carter Center"
+    },
+    {
+      "id": "4c6ef372fe94f82a",
+      "title": "Les gorilles de montagne dépassent le millier d'individus",
+      "niveau": "confirme",
+      "categorie": "Nature",
+      "media": "UICN"
+    },
+    {
+      "id": "eaa66d2c7ddf743f",
+      "title": "La couche d'ozone est en voie de résorption complète",
+      "niveau": "confirme",
+      "categorie": "Science",
+      "media": "PNUE"
+    },
+    {
+      "id": "88dde6e5fd29f054",
+      "title": "Le vaccin antipaludique R21 déployé dans de nouveaux pays",
+      "niveau": "confirme",
+      "categorie": "Santé",
+      "media": "OMS"
+    },
+    {
+      "id": "2715609f7c746c69",
+      "title": "Les baleines bleues sont de retour autour de la Géorgie du Sud",
+      "niveau": "bien_corrobore",
+      "categorie": "Océans",
+      "media": "British Antarctic Survey"
+    },
+    {
+      "id": "c54cda58fbbee87e",
+      "title": "Une ville portugaise rend ses transports gratuits pour tous ses habitants",
+      "niveau": "bien_corrobore",
+      "categorie": "Société",
+      "media": "Público"
+    },
+    {
+      "id": "638454127b096493",
+      "title": "Une équipe japonaise restaure la mobilité après une lésion médullaire",
+      "niveau": "confirme",
+      "categorie": "Science",
+      "media": "NHK"
+    },
+    {
+      "id": "01bbcdcbfa53e0a8",
+      "title": "La forêt atlantique brésilienne regagne du terrain pour la première fois",
+      "niveau": "bien_corrobore",
+      "categorie": "Nature",
+      "media": "Folha de S.Paulo"
+    },
+    {
+      "id": "9ff34785799e5cbd",
+      "title": "Un programme de cataracte rend la vue à des milliers de personnes âgées",
+      "niveau": "bien_corrobore",
+      "categorie": "Santé",
+      "media": "The Hindu"
+    },
+    {
+      "id": "3e2ac13ef8e8d8d2",
+      "title": "Un réseau de bibliothèques mobiles dessert les zones rurales isolées",
+      "niveau": "bien_corrobore",
+      "categorie": "Culture",
+      "media": "Agence locale"
+    }
+  ]
+}

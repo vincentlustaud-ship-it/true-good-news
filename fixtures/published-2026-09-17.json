@@ -1,0 +1,821 @@
+{
+  "_fixture": "Données de maquette (design/preview), jamais servies en production.",
+  "date": "2026-09-17",
+  "publishedAt": "2026-09-17T06:38:00Z",
+  "stats": {
+    "analysees": 198,
+    "pays": 41,
+    "langues": 19,
+    "flux_ok": 168,
+    "flux_echec": 2,
+    "gdelt_ok": true,
+    "clusters": 180,
+    "corroborees": 24,
+    "qualifiees": 31
+  },
+  "stories": [
+    {
+      "id": "dc623af8783354e7",
+      "category": "Nature",
+      "original": {
+        "title": "नेपालमा बाघको संख्या दोब्बर",
+        "summary": "The national census counts 355 tigers, up from 121 in 2009, the result of corridor protection and anti-poaching efforts.",
+        "lang": "ne",
+        "url": "https://wwfnepal.org/exemple/11"
+      },
+      "fr": {
+        "title": "Le Népal a doublé sa population de tigres sauvages",
+        "summary": "Le recensement national compte 355 tigres, contre 121 en 2009, résultat de la protection des corridors et de la lutte contre le braconnage.",
+        "machine": true
+      },
+      "en": {
+        "title": "Nepal doubled its wild tiger population",
+        "summary": "The national census counts 355 tigers, up from 121 in 2009, the result of corridor protection and anti-poaching efforts.",
+        "machine": true
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "WWF Népal",
+        "domain": "wwfnepal.org",
+        "country": "NP"
+      },
+      "publishedAt": "2026-09-17T00:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn11/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "NP"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 8,
+        "pays": 6,
+        "sources": [
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर",
+            "url": "https://wwfnepal.org/exemple/11",
+            "media": "WWF Népal",
+            "pays": "US",
+            "langue": "ne",
+            "date": "2026-09-17T00:00:00.000Z",
+            "proprietaire": "wwf-népal",
+            "via": "rss"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 2)",
+            "url": "https://media-1.example/11/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-16T23:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 3)",
+            "url": "https://media-2.example/11/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-16T22:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 4)",
+            "url": "https://media-3.example/11/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-16T21:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 5)",
+            "url": "https://media-4.example/11/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-16T20:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 6)",
+            "url": "https://media-5.example/11/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-16T19:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 7)",
+            "url": "https://media-6.example/11/6",
+            "media": "Média 7",
+            "pays": "US",
+            "langue": "fr",
+            "date": "2026-09-16T18:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "नेपालमा बाघको संख्या दोब्बर (reprise 8)",
+            "url": "https://media-7.example/11/7",
+            "media": "Média 8",
+            "pays": "GB",
+            "langue": "es",
+            "date": "2026-09-16T17:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "WWF",
+          "url": "https://wwfnepal.org/exemple/11"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-17T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "wwf-népal",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Nature",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "NP"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-17T04:02:00Z"
+      },
+      "fingerprint": [
+        "doubled",
+        "nepal",
+        "population",
+        "tiger",
+        "wild"
+      ]
+    },
+    {
+      "id": "7a99b4b1f77dd0fc",
+      "category": "Santé",
+      "original": {
+        "title": "Egypt reaches a decisive milestone against hepatitis C",
+        "summary": "The country is the first to reach 'on the path to elimination' status after screening and treating tens of millions of people.",
+        "lang": "en",
+        "url": "https://who.int/exemple/12"
+      },
+      "fr": {
+        "title": "L'Égypte franchit une étape décisive contre l'hépatite C",
+        "summary": "Le pays est le premier à atteindre le statut « en voie d'élimination » après avoir dépisté et traité des dizaines de millions de personnes.",
+        "machine": true
+      },
+      "en": {
+        "title": "Egypt reaches a decisive milestone against hepatitis C",
+        "summary": "The country is the first to reach 'on the path to elimination' status after screening and treating tens of millions of people.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "OMS",
+        "domain": "who.int",
+        "country": "CH"
+      },
+      "publishedAt": "2026-09-16T22:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn12/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "EG"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 11,
+        "pays": 7,
+        "sources": [
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C",
+            "url": "https://who.int/exemple/12",
+            "media": "OMS",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-16T22:00:00.000Z",
+            "proprietaire": "oms",
+            "via": "rss"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 2)",
+            "url": "https://media-1.example/12/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-16T21:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 3)",
+            "url": "https://media-2.example/12/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-16T20:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 4)",
+            "url": "https://media-3.example/12/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-16T19:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 5)",
+            "url": "https://media-4.example/12/4",
+            "media": "Média 5",
+            "pays": "ES",
+            "langue": "pt",
+            "date": "2026-09-16T18:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 6)",
+            "url": "https://media-5.example/12/5",
+            "media": "Média 6",
+            "pays": "BR",
+            "langue": "en",
+            "date": "2026-09-16T17:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 7)",
+            "url": "https://media-6.example/12/6",
+            "media": "Média 7",
+            "pays": "IN",
+            "langue": "fr",
+            "date": "2026-09-16T16:00:00.000Z",
+            "proprietaire": "media-6",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 8)",
+            "url": "https://media-7.example/12/7",
+            "media": "Média 8",
+            "pays": "US",
+            "langue": "es",
+            "date": "2026-09-16T15:00:00.000Z",
+            "proprietaire": "media-7",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 9)",
+            "url": "https://media-8.example/12/8",
+            "media": "Média 9",
+            "pays": "GB",
+            "langue": "de",
+            "date": "2026-09-16T14:00:00.000Z",
+            "proprietaire": "media-8",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 10)",
+            "url": "https://media-9.example/12/9",
+            "media": "Média 10",
+            "pays": "FR",
+            "langue": "pt",
+            "date": "2026-09-16T13:00:00.000Z",
+            "proprietaire": "media-9",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Egypt reaches a decisive milestone against hepatitis C (reprise 11)",
+            "url": "https://media-10.example/12/10",
+            "media": "Média 11",
+            "pays": "DE",
+            "langue": "en",
+            "date": "2026-09-16T12:00:00.000Z",
+            "proprietaire": "media-10",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": {
+          "type": "institution",
+          "nom": "Organisation mondiale de la santé",
+          "url": "https://who.int/exemple/12"
+        },
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-17T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "oms",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5",
+            "media-6",
+            "media-7",
+            "media-8",
+            "media-9",
+            "media-10"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE",
+            "ES",
+            "BR",
+            "IN"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Santé",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "EG"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-17T04:02:00Z"
+      },
+      "fingerprint": [
+        "against",
+        "decisive",
+        "egypt",
+        "hepatitis",
+        "milestone",
+        "reaches"
+      ],
+      "corrections": [
+        {
+          "date": "2026-09-18",
+          "texte": "Le communiqué initial parlait d'« élimination » ; l'OMS précise qu'il s'agit du statut « en voie d'élimination ». Le titre a été conservé tel que publié."
+        }
+      ]
+    },
+    {
+      "id": "18d12e6b76c84d11",
+      "category": "Nature",
+      "original": {
+        "title": "California condor flies again over the northwest forests",
+        "summary": "The first birds released three years ago have nested successfully, a first in the region in over a century.",
+        "lang": "en",
+        "url": "https://yuroktribe.org/exemple/13"
+      },
+      "fr": {
+        "title": "Le condor de Californie revole au-dessus des forêts du nord-ouest",
+        "summary": "Les premiers oiseaux relâchés il y a trois ans ont niché avec succès, une première dans la région depuis plus d'un siècle.",
+        "machine": true
+      },
+      "en": {
+        "title": "California condor flies again over the northwest forests",
+        "summary": "The first birds released three years ago have nested successfully, a first in the region in over a century.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "Yurok Tribe",
+        "domain": "yuroktribe.org",
+        "country": "US"
+      },
+      "publishedAt": "2026-09-16T20:00:00.000Z",
+      "image": null,
+      "imageStatus": "absent",
+      "places": [
+        "US"
+      ],
+      "evidence": {
+        "niveau": "confirme",
+        "redactions_independantes": 6,
+        "pays": 4,
+        "sources": [
+          {
+            "titre": "California condor flies again over the northwest forests",
+            "url": "https://yuroktribe.org/exemple/13",
+            "media": "Yurok Tribe",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-16T20:00:00.000Z",
+            "proprietaire": "yurok-tribe",
+            "via": "rss"
+          },
+          {
+            "titre": "California condor flies again over the northwest forests (reprise 2)",
+            "url": "https://media-1.example/13/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-16T19:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "California condor flies again over the northwest forests (reprise 3)",
+            "url": "https://media-2.example/13/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-16T18:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "California condor flies again over the northwest forests (reprise 4)",
+            "url": "https://media-3.example/13/3",
+            "media": "Média 4",
+            "pays": "DE",
+            "langue": "de",
+            "date": "2026-09-16T17:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          },
+          {
+            "titre": "California condor flies again over the northwest forests (reprise 5)",
+            "url": "https://media-4.example/13/4",
+            "media": "Média 5",
+            "pays": "US",
+            "langue": "pt",
+            "date": "2026-09-16T16:00:00.000Z",
+            "proprietaire": "media-4",
+            "via": "gdelt"
+          },
+          {
+            "titre": "California condor flies again over the northwest forests (reprise 6)",
+            "url": "https://media-5.example/13/5",
+            "media": "Média 6",
+            "pays": "GB",
+            "langue": "en",
+            "date": "2026-09-16T15:00:00.000Z",
+            "proprietaire": "media-5",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-17T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "yurok-tribe",
+            "media-1",
+            "media-2",
+            "media-3",
+            "media-4",
+            "media-5"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR",
+            "DE"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Nature",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "US"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-17T04:02:00Z"
+      },
+      "fingerprint": [
+        "again",
+        "california",
+        "condor",
+        "flies",
+        "forests",
+        "northwest",
+        "over"
+      ]
+    },
+    {
+      "id": "b708a824f612c926",
+      "category": "Science",
+      "original": {
+        "title": "Artificial cornea transplant restores sight to blind patients",
+        "summary": "All twenty trial patients regained measurable visual acuity one year after implantation, with no rejection.",
+        "lang": "en",
+        "url": "https://thelancet.com/exemple/14"
+      },
+      "fr": {
+        "title": "Une greffe de cornée artificielle rend la vue à des patients aveugles",
+        "summary": "Les vingt patients de l'essai ont recouvré une acuité visuelle mesurable un an après l'implantation, sans rejet.",
+        "machine": true
+      },
+      "en": {
+        "title": "Artificial cornea transplant restores sight to blind patients",
+        "summary": "All twenty trial patients regained measurable visual acuity one year after implantation, with no rejection.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "The Lancet",
+        "domain": "thelancet.com",
+        "country": "GB"
+      },
+      "publishedAt": "2026-09-16T18:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn14/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 4,
+        "pays": 3,
+        "sources": [
+          {
+            "titre": "Artificial cornea transplant restores sight to blind patients",
+            "url": "https://thelancet.com/exemple/14",
+            "media": "The Lancet",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-16T18:00:00.000Z",
+            "proprietaire": "the-lancet",
+            "via": "rss"
+          },
+          {
+            "titre": "Artificial cornea transplant restores sight to blind patients (reprise 2)",
+            "url": "https://media-1.example/14/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-16T17:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Artificial cornea transplant restores sight to blind patients (reprise 3)",
+            "url": "https://media-2.example/14/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-16T16:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          },
+          {
+            "titre": "Artificial cornea transplant restores sight to blind patients (reprise 4)",
+            "url": "https://media-3.example/14/3",
+            "media": "Média 4",
+            "pays": "US",
+            "langue": "de",
+            "date": "2026-09-16T15:00:00.000Z",
+            "proprietaire": "media-3",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-17T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "the-lancet",
+            "media-1",
+            "media-2",
+            "media-3"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Science",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [],
+        "modele": "fixture",
+        "evalue_le": "2026-09-17T04:02:00Z"
+      },
+      "fingerprint": [
+        "artificial",
+        "blind",
+        "cornea",
+        "patients",
+        "restores",
+        "sight",
+        "transplant"
+      ]
+    },
+    {
+      "id": "554021de755d453b",
+      "category": "Société",
+      "original": {
+        "title": "An isolated Himalayan village is connected to drinking water",
+        "summary": "After two years of work, 600 residents have a permanent water point less than a hundred metres from home.",
+        "lang": "en",
+        "url": "https://thehindu.com/exemple/15"
+      },
+      "fr": {
+        "title": "Un village isolé de l'Himalaya est raccordé à l'eau potable",
+        "summary": "Après deux ans de travaux, 600 habitants disposent d'un point d'eau permanent à moins de cent mètres de chez eux.",
+        "machine": true
+      },
+      "en": {
+        "title": "An isolated Himalayan village is connected to drinking water",
+        "summary": "After two years of work, 600 residents have a permanent water point less than a hundred metres from home.",
+        "machine": false
+      },
+      "translation": {
+        "provider": "deepl",
+        "note": null
+      },
+      "media": {
+        "name": "The Hindu",
+        "domain": "thehindu.com",
+        "country": "IN"
+      },
+      "publishedAt": "2026-09-16T16:00:00.000Z",
+      "image": {
+        "url": "https://picsum.photos/seed/tgn15/900/600",
+        "source": "og"
+      },
+      "imageStatus": "ok",
+      "places": [
+        "IN"
+      ],
+      "evidence": {
+        "niveau": "bien_corrobore",
+        "redactions_independantes": 3,
+        "pays": 3,
+        "sources": [
+          {
+            "titre": "An isolated Himalayan village is connected to drinking water",
+            "url": "https://thehindu.com/exemple/15",
+            "media": "The Hindu",
+            "pays": "US",
+            "langue": "en",
+            "date": "2026-09-16T16:00:00.000Z",
+            "proprietaire": "the-hindu",
+            "via": "rss"
+          },
+          {
+            "titre": "An isolated Himalayan village is connected to drinking water (reprise 2)",
+            "url": "https://media-1.example/15/1",
+            "media": "Média 2",
+            "pays": "GB",
+            "langue": "fr",
+            "date": "2026-09-16T15:00:00.000Z",
+            "proprietaire": "media-1",
+            "via": "gdelt"
+          },
+          {
+            "titre": "An isolated Himalayan village is connected to drinking water (reprise 3)",
+            "url": "https://media-2.example/15/2",
+            "media": "Média 3",
+            "pays": "FR",
+            "langue": "es",
+            "date": "2026-09-16T14:00:00.000Z",
+            "proprietaire": "media-2",
+            "via": "gdelt"
+          }
+        ],
+        "source_primaire": null,
+        "factcheck": {
+          "interroge": true,
+          "resultats": [],
+          "dementi": false
+        },
+        "calcule_le": "2026-09-17T04:03:00Z",
+        "details": {
+          "proprietaires": [
+            "the-hindu",
+            "media-1",
+            "media-2"
+          ],
+          "pays_liste": [
+            "US",
+            "GB",
+            "FR"
+          ],
+          "agregateurs_ecartes": 1,
+          "reprises_agence": 0,
+          "requete_recoupement": null,
+          "gdelt_interroge": true,
+          "plafonne_sans_factcheck": false
+        }
+      },
+      "qualification": {
+        "universelle": true,
+        "bonne_nouvelle": true,
+        "categorie": "Société",
+        "raison_courte": "Bénéfice concret et mesuré, décrit dans le texte, sans parti pris.",
+        "exclusions_declenchees": [],
+        "doute": false,
+        "pays_cites": [
+          "IN"
+        ],
+        "modele": "fixture",
+        "evalue_le": "2026-09-17T04:02:00Z"
+      },
+      "fingerprint": [
+        "connected",
+        "drinking",
+        "himalayan",
+        "isolated",
+        "village",
+        "water"
+      ]
+    }
+  ]
+}
