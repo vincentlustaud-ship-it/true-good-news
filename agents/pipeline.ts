@@ -4,7 +4,7 @@
  */
 import { harvest, type HarvestOptions } from "./harvest.ts";
 import { cluster, localEvidence, deepCorroborate } from "./corroborate.ts";
-import { qualify } from "./qualify.ts";
+import { qualify, DEFAULT_MAX_LLM_CALLS } from "./qualify.ts";
 import { select } from "./edit.ts";
 import { translateAndEnrich } from "./translate.ts";
 import { Reporter } from "./report.ts";
@@ -52,7 +52,7 @@ export async function runPipeline(opts: PipelineOptions): Promise<PipelineResult
   // Budget d'attente GDELT : adossé à la coupure réelle de la fonction, pas à un forfait.
   const maxCorro = opts.maxGdeltCorroboration ?? 45;
   const corroborationReserveMs = maxCorro * GDELT_MIN_GAP_MS;
-  const qualifyMs = opts.skipQualify ? 0 : qualifyReserveMs(opts.maxLlmCalls ?? 150);
+  const qualifyMs = opts.skipQualify ? 0 : qualifyReserveMs(opts.maxLlmCalls ?? DEFAULT_MAX_LLM_CALLS);
   setGdeltDeadline(opts.deadlineAt ?? null);
   if (opts.deadlineAt) {
     rep.alert(`Coupure de l'exécution prévue dans ${Math.round((opts.deadlineAt - Date.now()) / 1000)} s ; le budget d'attente GDELT s'y adosse.`);
@@ -99,7 +99,7 @@ export async function runPipeline(opts: PipelineOptions): Promise<PipelineResult
     accepted = ordered.slice(0, 40);
     rep.endStage(accepted.length);
   } else {
-    const q = await qualify(ordered, rep, { maxCalls: opts.maxLlmCalls ?? 150 });
+    const q = await qualify(ordered, rep, { maxCalls: opts.maxLlmCalls ?? DEFAULT_MAX_LLM_CALLS });
     if (!q.ok) {
       const report = rep.finish();
       if (!opts.dryRun) await kv.setJSON("reports", opts.date, report);

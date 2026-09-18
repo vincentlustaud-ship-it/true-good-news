@@ -157,5 +157,9 @@ un clic qui supprime l'enregistrement, en-têtes `List-Unsubscribe` / `List-Unsu
   d'affichages, présenté comme tel.
 - La limitation de débit (connexion admin, vues, abonnement) est en mémoire : elle repart de zéro à chaque démarrage
   à froid d'une fonction.
+- La qualification soumet au plus 300 clusters par matin (`DEFAULT_MAX_LLM_CALLS` dans `agents/qualify.ts`), sur les
+  quelque 4 000 recoupés : les mieux placés d'abord, selon le nombre de rédactions, de pays et le type de flux. Ce
+  budget occupe 380 des 900 secondes de la fonction d'arrière-plan dans l'hypothèse pessimiste de 10 s par appel, et
+  le seuil de rupture est à 11 s par appel. Au-delà, il faut baisser le budget ou monter la concurrence.
 - Le modèle de qualification reste un jugement : un humain valide chaque publication, tous les jours.
 - « Aucun démenti » n'est pas une preuve de vérité, et l'interface ne le formule jamais ainsi.

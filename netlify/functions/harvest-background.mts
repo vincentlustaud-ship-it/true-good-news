@@ -40,7 +40,9 @@ export default async (req: Request) => {
   try {
     // Une fonction d'arrière-plan Netlify est coupée à 15 minutes ; on part de l'entrée du gestionnaire,
     // ce qui laisse au pipeline la mesure exacte du temps qu'il lui reste.
-    const result = await runPipeline({ date, maxGdeltCorroboration: 45, maxLlmCalls: 150, deadlineAt: startedAt + 15 * 60_000 });
+    // maxLlmCalls n'est pas fixé ici : la valeur de référence est DEFAULT_MAX_LLM_CALLS dans agents/qualify.ts,
+    // d'où le pipeline tire aussi son estimation du temps de qualification restant.
+    const result = await runPipeline({ date, maxGdeltCorroboration: 45, deadlineAt: startedAt + 15 * 60_000 });
     console.log(`harvest-background : fin ${date} — ${result.candidates?.candidates.length ?? 0} candidates, alertes : ${result.report.alerts.join(" | ") || "aucune"}`);
   } catch (e) {
     console.error("harvest-background : erreur", e);

@@ -36,6 +36,13 @@ Règles dures :
 ${CHARTE_MD}
 </charte>`;
 
+/**
+ * Budget d'appels de qualification par exécution, source unique de vérité.
+ * Le pipeline s'en sert aussi pour estimer le temps que la qualification réclame encore, ce qui
+ * borne les attentes de reprise GDELT : les deux valeurs ne doivent jamais diverger.
+ */
+export const DEFAULT_MAX_LLM_CALLS = 300;
+
 export interface QualifyOptions { concurrency?: number; maxCalls?: number }
 
 export async function qualify(clusters: Cluster[], rep: Reporter, opts: QualifyOptions = {}): Promise<{ ok: boolean }> {
@@ -47,7 +54,7 @@ export async function qualify(clusters: Cluster[], rep: Reporter, opts: QualifyO
   }
   const client = new Anthropic({ apiKey: env.anthropicKey, maxRetries: 3 });
   const model = env.qualifyModel;
-  const maxCalls = opts.maxCalls ?? 150;
+  const maxCalls = opts.maxCalls ?? DEFAULT_MAX_LLM_CALLS;
   const targets = clusters.slice(0, maxCalls);
   if (clusters.length > maxCalls) rep.note(`${clusters.length - maxCalls} clusters non soumis (budget de ${maxCalls} appels)`);
   let fatal: string | null = null;

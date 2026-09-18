@@ -115,6 +115,28 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
 - **Écritures sans espaces (chinois, japonais, coréen, thaï)** : découpage en bigrammes de caractères pour le
   recoupement lexical ; les marques combinantes (devanagari, arabe) sont conservées dans les jetons.
 
+### Qualification — budget d'appels
+
+- **Budget porté de 150 à 300 appels par exécution.** Avec 150, environ 3 842 des ~4 000 clusters recoupés chaque
+  matin n'étaient jamais soumis au modèle, ce qui bornait mécaniquement le nombre de candidates possibles. Décision du
+  porteur du projet.
+- **Valeur unique de référence.** Le chiffre était dupliqué à trois endroits — le défaut de `qualify.ts`, le défaut
+  utilisé par `pipeline.ts` pour appeler la qualification, et celui utilisé par ce même fichier pour *estimer* le temps
+  de qualification restant — et il était en plus **fixé explicitement** par `harvest-background.mts`. Changer le seul
+  défaut du pipeline n'aurait donc rien changé en production, et aurait laissé l'estimation de réserve croire à 150
+  appels tout en en lançant 300, soit 190 s de travail non réservées sous la coupure. Le budget vit désormais dans une
+  seule constante exportée, `DEFAULT_MAX_LLM_CALLS` (`agents/qualify.ts`), dont dérivent l'exécution et l'estimation ;
+  la fonction d'arrière-plan ne fixe plus la valeur.
+- **Effet sur le budget d'attente GDELT.** La formule de réserve est générique (`ceil(appels / 8) × 10 s`) : elle est
+  passée d'elle-même de 190 s à 380 s. Conséquence assumée, le temps laissé aux reprises GDELT pendant la collecte
+  tombe de 228 s à 38 s, soit environ deux reprises. C'est l'arbitrage voulu : la qualification passe avant la
+  résilience aux limitations de GDELT.
+- **Marge d'erreur réduite, à surveiller.** Le temps disponible pour la qualification est de 418 s sur 38 vagues de
+  8 appels, soit un **seuil de rupture à 11,0 s par appel** — contre 22,0 s avec 150 appels. L'estimation pessimiste
+  retenue dans le code est de 10 s. Au-delà de 11 s de latence moyenne, l'exécution dépasserait les 15 minutes. La
+  première exécution réelle avec clé donnera la latence vraie ; si elle dépasse 9 s, il faudra soit remonter la
+  concurrence, soit redescendre le budget d'appels.
+
 ### Site
 
 - **Navigation mobile.** La maquette mobile ne montre que le logo et le sélecteur de langue ; une ligne de
