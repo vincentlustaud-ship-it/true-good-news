@@ -47,6 +47,47 @@ let budgetExhausted = false;
 
 export interface GdeltOptions { timespan?: string; start?: Date; end?: Date; maxrecords?: number; sort?: "hybridrel" | "datedesc" | "tonedesc" }
 
+/* ---------------- Journalisation de diagnostic ----------------
+ * Les échecs étaient avalés : le rapport disait « sans réponse » sans dire pourquoi, ce qui ne
+ * permet pas de distinguer un délai dépassé, une erreur réseau, un blocage d'adresse ou un 5xx.
+ * Chaque tentative ratée émet désormais une ligne JSON sur console.error, visible dans les journaux
+ * Netlify. Purement additif : les valeurs de retour et la logique de reprise sont inchangées.
+ */
+
+/** Déplie la chaîne `cause` : sous Node, `fetch` masque DNS et connexion derrière « fetch failed ». */
+function describeError(e: unknown): Record<string, unknown> {
+  const out: Record<string, unknown> = {};
+  let cur: unknown = e;
+  for (let depth = 0; cur != null && depth < 4; depth++) {
+    const prefix = depth === 0 ? "" : `cause${depth > 1 ? depth : ""}_`;
+    if (typeof cur !== "object") { out[`${prefix}valeur`] = String(cur); break; }
+    const o = cur as { name?: unknown; message?: unknown; code?: unknown; errno?: unknown; syscall?: unknown; hostname?: unknown; cause?: unknown };
+    out[`${prefix}type`] = typeof o.name === "string" ? o.name : cur.constructor?.name ?? "inconnu";
+    if (o.message !== undefined) out[`${prefix}message`] = String(o.message).slice(0, 300);
+    if (o.code !== undefined) out[`${prefix}code`] = String(o.code);
+    if (o.errno !== undefined) out[`${prefix}errno`] = String(o.errno);
+    if (o.syscall !== undefined) out[`${prefix}syscall`] = String(o.syscall);
+    if (o.hostname !== undefined) out[`${prefix}hote`] = String(o.hostname);
+    if (o.cause === undefined) break;
+    cur = o.cause;
+  }
+  return out;
+}
+
+function excerpt(txt: string): string {
+  return txt.replace(/\s+/g, " ").trim().slice(0, 240);
+}
+
+function logFailure(query: string, attempt: number, startedAt: number, motif: string, detail: Record<string, unknown>): void {
+  console.error("[gdelt] " + JSON.stringify({
+    motif,
+    tentative: attempt + 1,
+    duree_ms: Date.now() - startedAt,
+    requete: query.slice(0, 90),
+    ...detail,
+  }));
+}
+
 async function rawQuery(query: string, opts: GdeltOptions): Promise<GdeltArticle[] | null> {
   const p = new URLSearchParams({ query, mode: "artlist", format: "json", maxrecords: String(opts.maxrecords ?? 250), sort: opts.sort ?? "hybridrel" });
   if (opts.start && opts.end) { p.set("startdatetime", toGdeltStamp(opts.start)); p.set("enddatetime", toGdeltStamp(opts.end)); }
@@ -56,26 +97,55 @@ async function rawQuery(query: string, opts: GdeltOptions): Promise<GdeltArticle
     const gap = Math.max(0, lastCall + MIN_GAP - Date.now());
     if (gap > 0) await sleep(gap);
     lastCall = Date.now();
+    const startedAt = Date.now();
     try {
       const res = await fetch(url, { headers: { "User-Agent": USER_AGENT, Accept: "application/json" }, signal: AbortSignal.timeout(ATTEMPT_TIMEOUT_MS) });
       const txt = await res.text();
       if (res.status === 429 || /limit requests/i.test(txt)) {
         rateLimitedCount++;
         const wait = RETRY_WAITS_MS[attempt];
+        logFailure(query, attempt, startedAt, "limitation de débit", {
+          statut: res.status, statut_texte: res.statusText,
+          retry_after: res.headers.get("retry-after"), serveur: res.headers.get("server"),
+          corps: excerpt(txt),
+          suite: wait === undefined ? "abandon : 4 tentatives épuisées" : `nouvelle tentative dans ${wait / 1000} s`,
+        });
         if (wait === undefined) return null; // les 4 tentatives sont épuisées
         // Coût certain de la tentative suivante : l'attente, puis l'espacement poli.
         const cost = wait + MIN_GAP;
-        if (cost > retryBudgetLeftMs) { budgetExhausted = true; return null; }
+        if (cost > retryBudgetLeftMs) {
+          budgetExhausted = true;
+          logFailure(query, attempt, startedAt, "budget d'attente épuisé", { budget_restant_ms: Math.round(retryBudgetLeftMs), cout_requis_ms: cost });
+          return null;
+        }
         retryBudgetLeftMs -= cost;
         retryCount++;
         await sleep(wait);
         continue;
       }
-      if (!res.ok) return null;
-      if (!txt.trim().startsWith("{")) return txt.trim() === "" ? [] : null;
+      if (!res.ok) {
+        logFailure(query, attempt, startedAt, "réponse HTTP en erreur", {
+          statut: res.status, statut_texte: res.statusText,
+          content_type: res.headers.get("content-type"), serveur: res.headers.get("server"),
+          corps: excerpt(txt),
+        });
+        return null;
+      }
+      if (!txt.trim().startsWith("{")) {
+        if (txt.trim() === "") return [];
+        logFailure(query, attempt, startedAt, "corps non-JSON", {
+          statut: res.status, content_type: res.headers.get("content-type"),
+          taille_octets: txt.length, corps: excerpt(txt),
+        });
+        return null;
+      }
       const j = JSON.parse(txt) as { articles?: GdeltArticle[] };
       return j.articles ?? [];
-    } catch {
+    } catch (e) {
+      logFailure(query, attempt, startedAt, "exception lors de l'appel", {
+        delai_tentative_ms: ATTEMPT_TIMEOUT_MS,
+        ...describeError(e),
+      });
       return null;
     }
   }
