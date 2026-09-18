@@ -10,6 +10,8 @@ export const env = {
   get sessionSecret() { return process.env.SESSION_SECRET?.trim() || null; },
   get siteUrl() { return (process.env.SITE_URL?.trim() || process.env.URL?.trim() || "http://localhost:8888").replace(/\/+$/, ""); },
   get contactEmail() { return process.env.CONTACT_EMAIL?.trim() || "contact@truegoodnewstoday.com"; },
+  get blueskyIdentifier() { return process.env.BLUESKY_IDENTIFIER?.trim() || null; },
+  get blueskyAppPassword() { return process.env.BLUESKY_APP_PASSWORD?.trim() || null; },
   get redditClientId() { return process.env.REDDIT_CLIENT_ID?.trim() || null; },
   get redditClientSecret() { return process.env.REDDIT_CLIENT_SECRET?.trim() || null; },
 };

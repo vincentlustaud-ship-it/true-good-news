@@ -108,6 +108,23 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   Hors fonction d'arrière-plan (`npm run harvest`, tests), aucune date limite n'est fixée et le pool de 3 minutes
   subsiste comme simple garde-fou contre un emballement. La logique de reprise elle-même — 4 tentatives, 8 s, 20 s,
   40 s, délai de 20 s par tentative — n'a pas changé.
+- **Flux RSS surdimensionnés : troncature silencieuse corrigée.** Prensa Libre publie un flux de 4,03 Mo, au-delà du
+  plafond de 3 Mo du lecteur. `fetchText` coupait le corps et rendait le fragment tel quel ; le parseur échouait sur un
+  XML sectionné en plein élément et la journée entière du flux était perdue (« XML illisible »). Le plafond passe à
+  6 Mo et, surtout, une troncature n'est plus fatale : le document est recoupé au dernier élément complet puis refermé.
+  Les flux étant antéchronologiques, on conserve les plus récents, c'est-à-dire ce qui nous intéresse. Vérifié :
+  Prensa Libre passe de 0 à 99 éléments, et les 170 flux lisent.
+- **Échecs de flux journalisés.** Comme pour GDELT, `readFeed` rendait « pas de réponse » sans dire pourquoi. Chaque
+  échec émet désormais une ligne `[flux]` sur `console.error` avec le statut HTTP, le type et le message de l'erreur
+  (chaîne `cause` dépliée), la durée, la taille, le content-type et l'URL finale après redirection. C'est ce qui
+  permettra de distinguer un flux réellement mort d'un blocage propre à l'hébergeur.
+- **Bluesky : la recherche de posts n'est plus ouverte.** `SOURCES.md` range Bluesky parmi les API « ouvertes et
+  gratuites ». Vérifié le 18 septembre 2026, ce n'est plus vrai pour la recherche :
+  `app.bsky.actor.getProfile` répond 200 sur l'hôte public, mais `app.bsky.feed.searchPosts` renvoie 403, et la même
+  requête sur `bsky.social` répond `AuthMissing`. Ce n'était donc ni une panne réseau ni un User-Agent refusé.
+  On passe par un mot de passe d'application, gratuit, exactement comme Reddit : `BLUESKY_IDENTIFIER` et
+  `BLUESKY_APP_PASSWORD`. Sans identifiants, Bluesky est ignoré et consigné comme tel, jamais présenté comme une
+  panne. **À arbitrer par le porteur du projet** : faut-il amender `SOURCES.md`, qui affirme que ces API sont ouvertes ?
 - **Reddit** n'est interrogé qu'avec des identifiants d'application (`REDDIT_CLIENT_ID/SECRET`), conformément à sa
   politique ; sans identifiants, il est ignoré et consigné.
 - **Fenêtre de collecte** : 24 h avant 04:00 UTC, avec 12 h de tolérance en amont (fuseaux et dates RSS approximatives).

@@ -61,7 +61,14 @@ export async function harvest(opts: HarvestOptions, rep: Reporter): Promise<Harv
   const results = await mapLimit(feeds, 12, (f) => readFeed(f));
   results.forEach((r, i) => {
     const f = feeds[i]!;
-    if (r.error) { feedsFailed++; rep.note(`flux en échec : ${f.name} (${r.error})`); return; }
+    if (r.error) {
+      feedsFailed++;
+      rep.note(`flux en échec : ${f.name} (${r.error})`);
+      // Le détail réel part dans les journaux Netlify : statut, cause réseau, durée, taille.
+      console.error("[flux] " + JSON.stringify({ motif: r.error, ...(r.diagnostic ?? { flux: f.name, url: f.url }) }));
+      return;
+    }
+    if (r.diagnostic?.tronque_et_repare) rep.note(`flux ${f.name} : corps au-delà du plafond, recoupé au dernier élément complet (${r.items.length} retenus)`);
     feedsOk++;
     for (const a of r.items) {
       if (!inWindow(a.publishedAt)) { rep.reject("collecte", a.title, a.url, "hors fenetre de 24 h"); continue; }

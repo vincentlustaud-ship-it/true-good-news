@@ -22,11 +22,40 @@ function usable(url: string | undefined | null): url is string {
 
 interface BskyPost { record?: { text?: string; facets?: Array<{ features?: Array<{ $type?: string; uri?: string }> }> }; embed?: { $type?: string; external?: { uri?: string; title?: string; description?: string; thumb?: string } } }
 
+/**
+ * Recherche Bluesky : `app.bsky.feed.searchPosts` n'est plus ouverte sans authentification.
+ * Vérifié le 18 septembre 2026 : l'hôte public répond bien (`app.bsky.actor.getProfile` → 200) mais
+ * la recherche renvoie 403, et la même requête sur `bsky.social` répond `AuthMissing`. On passe donc
+ * par un mot de passe d'application, gratuit, comme pour Reddit. Sans identifiants, Bluesky est
+ * ignoré et consigné — jamais présenté comme une panne réseau.
+ */
+async function blueskyToken(notes: string[]): Promise<string | null> {
+  const id = env.blueskyIdentifier, pw = env.blueskyAppPassword;
+  if (!id || !pw) { notes.push("Bluesky : ignoré (BLUESKY_IDENTIFIER / BLUESKY_APP_PASSWORD absents ; la recherche de posts n'est plus ouverte sans authentification)"); return null; }
+  try {
+    const res = await fetch("https://bsky.social/xrpc/com.atproto.server.createSession", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "User-Agent": USER_AGENT },
+      body: JSON.stringify({ identifier: id, password: pw }),
+      signal: AbortSignal.timeout(10_000),
+    });
+    if (!res.ok) { notes.push(`Bluesky : authentification refusée (${res.status})`); return null; }
+    const { accessJwt } = (await res.json()) as { accessJwt?: string };
+    if (!accessJwt) { notes.push("Bluesky : jeton absent de la réponse d'authentification"); return null; }
+    return accessJwt;
+  } catch (e) {
+    notes.push(`Bluesky : authentification impossible (${(e as Error).name})`);
+    return null;
+  }
+}
+
 export async function spotBluesky(queries: string[], notes: string[]): Promise<Spotted[]> {
   const out: Spotted[] = [];
+  const token = await blueskyToken(notes);
+  if (!token) return out;
   for (const q of queries) {
     const p = new URLSearchParams({ q, limit: "50", sort: "latest" });
-    const j = await fetchJSON<{ posts?: BskyPost[] }>(`https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?${p}`, { timeoutMs: 8_000 });
+    const j = await fetchJSON<{ posts?: BskyPost[] }>(`https://bsky.social/xrpc/app.bsky.feed.searchPosts?${p}`, { timeoutMs: 10_000, headers: { Authorization: `Bearer ${token}` } });
     if (!j) { notes.push(`Bluesky : pas de réponse pour « ${q} »`); continue; }
     for (const post of j.posts ?? []) {
       const ext = post.embed?.external;

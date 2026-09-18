@@ -1,6 +1,6 @@
 /** Lecture d'un flux RSS / Atom / RDF : titre, lien, résumé court, date, image déclarée. Rien d'autre. */
 import { XMLParser } from "fast-xml-parser";
-import { fetchText } from "./http.ts";
+import { fetchDetailed, describeFetchError } from "./http.ts";
 import { parseDateLoose } from "./dates.ts";
 import { stripHtml, truncate, domainOf } from "./text.ts";
 import type { RawArticle, FeedKind } from "../agents/types.ts";
@@ -45,17 +45,56 @@ function imageOf(it: Any): string | null {
   return null;
 }
 
-export async function readFeed(feed: FeedDef): Promise<{ items: RawArticle[]; error: string | null }> {
-  const xml = await fetchText(feed.url, { timeoutMs: 12_000, maxBytes: 3_000_000, accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.5" });
-  if (xml == null) return { items: [], error: "pas de réponse" };
+/**
+ * Un flux plus gros que le plafond est coupé en plein document : le parseur échoue et on perd tout.
+ * On recoupe alors au dernier élément complet et on referme le document. Les flux étant
+ * antéchronologiques, on conserve les plus récents, c'est-à-dire exactement ce qui nous intéresse.
+ */
+export function repairTruncatedFeed(xml: string): string | null {
+  const closers: Array<[RegExp, string]> = [
+    [/<\/item>/g, "</channel></rss>"],
+    [/<\/entry>/g, "</feed>"],
+  ];
+  for (const [re, tail] of closers) {
+    let last = -1;
+    for (const m of xml.matchAll(re)) last = m.index + m[0].length;
+    if (last < 0) continue;
+    const head = xml.slice(0, last);
+    if (/<rss[\s>]/i.test(head)) return head + "</channel></rss>";
+    if (/<feed[\s>]/i.test(head)) return head + "</feed>";
+    if (/<rdf:RDF[\s>]/i.test(head)) return head + "</rdf:RDF>";
+    return head + tail;
+  }
+  return null;
+}
+
+export interface FeedRead { items: RawArticle[]; error: string | null; diagnostic: Record<string, unknown> | null }
+
+export async function readFeed(feed: FeedDef): Promise<FeedRead> {
+  const res = await fetchDetailed(feed.url, { timeoutMs: 15_000, maxBytes: 6_000_000, accept: "application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.5" });
+  const ctx = { flux: feed.name, url: feed.url, duree_ms: res.ms, octets: res.bytes, statut: res.status, content_type: res.contentType, ...(res.finalUrl && res.finalUrl !== feed.url ? { url_finale: res.finalUrl } : {}) };
+  if (res.text == null) {
+    return { items: [], error: res.failure?.motif ?? "pas de réponse", diagnostic: { ...ctx, ...(res.failure?.detail ?? {}) } };
+  }
+  let xml = res.text;
+  let repaired = false;
+  if (res.truncated) {
+    const fixed = repairTruncatedFeed(xml);
+    if (fixed == null) return { items: [], error: "corps tronqué et irréparable", diagnostic: { ...ctx, tronque: true } };
+    xml = fixed;
+    repaired = true;
+  }
   let parsed: Any;
-  try { parsed = parser.parse(xml) as Any; } catch { return { items: [], error: "XML illisible" }; }
+  try { parsed = parser.parse(xml) as Any; } catch (e) {
+    return { items: [], error: "XML illisible", diagnostic: { ...ctx, tronque: res.truncated, debut: xml.slice(0, 160).replace(/\s+/g, " "), ...describeFetchError(e) } };
+  }
+  const note = repaired ? { tronque_et_repare: true } : null;
   const rss = parsed.rss as Any | undefined;
   const channel = rss?.channel as Any | undefined;
   const feedNode = parsed.feed as Any | undefined;
   const rdf = parsed["rdf:RDF"] as Any | undefined;
   let raw: unknown = channel?.item ?? feedNode?.entry ?? rdf?.item;
-  if (!raw) return { items: [], error: "aucun élément" };
+  if (!raw) return { items: [], error: "aucun élément", diagnostic: { ...ctx, debut: xml.slice(0, 160).replace(/\s+/g, " ") } };
   const list = (Array.isArray(raw) ? raw : [raw]) as Any[];
   const items: RawArticle[] = [];
   for (const it of list) {
@@ -72,5 +111,5 @@ export async function readFeed(feed: FeedDef): Promise<{ items: RawArticle[]; er
       image: imageOf(it), via: "rss", feedName: feed.name, feedKind: feed.kind,
     });
   }
-  return { items, error: null };
+  return { items, error: null, diagnostic: note ? { ...ctx, ...note } : null };
 }

@@ -110,10 +110,11 @@ Sur Netlify : *Site settings → Environment variables*. En local : `.env` (jama
 | `SESSION_SECRET` | signature du cookie de session et des appels internes cron → arrière-plan | idem |
 | `SITE_URL` | base des liens de confirmation et de désabonnement | `URL` de Netlify |
 | `CONTACT_EMAIL` | adresse de contact | `contact@truegoodnewstoday.com` |
+| `BLUESKY_IDENTIFIER`, `BLUESKY_APP_PASSWORD` | repérage Bluesky (mot de passe d'application, gratuit) | Bluesky ignoré : la recherche de posts n'est plus ouverte sans authentification |
 | `REDDIT_CLIENT_ID`, `REDDIT_CLIENT_SECRET` | repérage Reddit | Reddit ignoré |
 | `TGN_STORAGE=fs`, `TGN_DATA_DIR` | forcer le stockage fichier (`.data/`) hors Netlify | |
 
-GDELT, Bluesky et Mastodon n'ont pas de clé. Les clés ne sont lues que dans les fonctions serveur.
+GDELT et Mastodon n'ont pas de clé. Les clés ne sont lues que dans les fonctions serveur.
 
 ## Déploiement
 
