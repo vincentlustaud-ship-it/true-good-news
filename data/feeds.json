@@ -1,0 +1,1532 @@
+[
+  {
+    "name": "Agência Brasil",
+    "url": "https://agenciabrasil.ebc.com.br/rss/ultimasnoticias/feed.xml",
+    "lang": "pt",
+    "country": "BR",
+    "kind": "agency",
+    "owner": "ebc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Yonhap (en)",
+    "url": "https://en.yna.co.kr/RSS/news.xml",
+    "lang": "en",
+    "country": "KR",
+    "kind": "agency",
+    "owner": "yonhap",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "연합뉴스",
+    "url": "https://www.yna.co.kr/rss/news.xml",
+    "lang": "ko",
+    "country": "KR",
+    "kind": "agency",
+    "owner": "yonhap",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "TASS (en)",
+    "url": "https://tass.com/rss/v2.xml",
+    "lang": "en",
+    "country": "RU",
+    "kind": "agency",
+    "owner": "tass",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Anadolu (en)",
+    "url": "https://www.aa.com.tr/en/rss/default?cat=guncel",
+    "lang": "en",
+    "country": "TR",
+    "kind": "agency",
+    "owner": "anadolu",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Anadolu (fr)",
+    "url": "https://www.aa.com.tr/fr/rss/default?cat=guncel",
+    "lang": "fr",
+    "country": "TR",
+    "kind": "agency",
+    "owner": "anadolu",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "European Commission",
+    "url": "https://ec.europa.eu/commission/presscorner/api/rss?language=en",
+    "lang": "en",
+    "country": "BE",
+    "kind": "institution",
+    "owner": "eu",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "MSF",
+    "url": "https://www.msf.org/rss/all",
+    "lang": "en",
+    "country": "CH",
+    "kind": "institution",
+    "owner": "msf",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "CNRS Le journal",
+    "url": "https://lejournal.cnrs.fr/rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "institution",
+    "owner": "cnrs",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ESA",
+    "url": "https://www.esa.int/rssfeed/Our_Activities/Space_Science",
+    "lang": "en",
+    "country": "FR",
+    "kind": "institution",
+    "owner": "esa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ESA Top news",
+    "url": "https://www.esa.int/rssfeed/TopNews",
+    "lang": "en",
+    "country": "FR",
+    "kind": "institution",
+    "owner": "esa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "INSERM",
+    "url": "https://presse.inserm.fr/feed/",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "institution",
+    "owner": "inserm",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Lancet",
+    "url": "https://www.thelancet.com/rssfeed/lancet_current.xml",
+    "lang": "en",
+    "country": "GB",
+    "kind": "institution",
+    "owner": "elsevier",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Habari za UN",
+    "url": "https://news.un.org/feed/subscribe/sw/news/all/rss.xml",
+    "lang": "sw",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "MIT News",
+    "url": "https://news.mit.edu/rss/feed",
+    "lang": "en",
+    "country": "US",
+    "kind": "institution",
+    "owner": "mit",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NASA",
+    "url": "https://www.nasa.gov/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "institution",
+    "owner": "nasa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NOAA",
+    "url": "https://www.noaa.gov/rss.xml",
+    "lang": "en",
+    "country": "US",
+    "kind": "institution",
+    "owner": "noaa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Noticias ONU",
+    "url": "https://news.un.org/feed/subscribe/es/news/all/rss.xml",
+    "lang": "es",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ONU Info",
+    "url": "https://news.un.org/feed/subscribe/fr/news/all/rss.xml",
+    "lang": "fr",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ONU News (pt)",
+    "url": "https://news.un.org/feed/subscribe/pt/news/all/rss.xml",
+    "lang": "pt",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Science Daily",
+    "url": "https://www.sciencedaily.com/rss/all.xml",
+    "lang": "en",
+    "country": "US",
+    "kind": "institution",
+    "owner": "sciencedaily",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "UN News",
+    "url": "https://news.un.org/feed/subscribe/en/news/all/rss.xml",
+    "lang": "en",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Новости ООН",
+    "url": "https://news.un.org/feed/subscribe/ru/news/all/rss.xml",
+    "lang": "ru",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "أخبار الأمم المتحدة",
+    "url": "https://news.un.org/feed/subscribe/ar/news/all/rss.xml",
+    "lang": "ar",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "यूएन न्यूज़",
+    "url": "https://news.un.org/feed/subscribe/hi/news/all/rss.xml",
+    "lang": "hi",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "联合国新闻",
+    "url": "https://news.un.org/feed/subscribe/zh/news/all/rss.xml",
+    "lang": "zh",
+    "country": "US",
+    "kind": "institution",
+    "owner": "un",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Buenos Aires Times",
+    "url": "https://www.batimes.com.ar/feed",
+    "lang": "en",
+    "country": "AR",
+    "kind": "media",
+    "owner": "perfil",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Clarín",
+    "url": "https://www.clarin.com/rss/lo-ultimo/",
+    "lang": "es",
+    "country": "AR",
+    "kind": "media",
+    "owner": "clarin",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "La Nación",
+    "url": "https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml",
+    "lang": "es",
+    "country": "AR",
+    "kind": "media",
+    "owner": "la-nacion",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Der Standard",
+    "url": "https://www.derstandard.at/rss",
+    "lang": "de",
+    "country": "AT",
+    "kind": "media",
+    "owner": "standard",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ABC News (AU)",
+    "url": "https://www.abc.net.au/news/feed/2942460/rss.xml",
+    "lang": "en",
+    "country": "AU",
+    "kind": "media",
+    "owner": "abc-au",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Sydney Morning Herald",
+    "url": "https://www.smh.com.au/rss/feed.xml",
+    "lang": "en",
+    "country": "AU",
+    "kind": "media",
+    "owner": "nine",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Conversation",
+    "url": "https://theconversation.com/global/articles.atom",
+    "lang": "en",
+    "country": "AU",
+    "kind": "media",
+    "owner": "the-conversation",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Balkan Insight",
+    "url": "https://balkaninsight.com/feed/",
+    "lang": "en",
+    "country": "BA",
+    "kind": "media",
+    "owner": "birn",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "RTBF",
+    "url": "https://rss.rtbf.be/article/rss/highlight_rtbfinfo_info.xml",
+    "lang": "fr",
+    "country": "BE",
+    "kind": "media",
+    "owner": "rtbf",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Pays (BF)",
+    "url": "https://lepays.bf/feed/",
+    "lang": "fr",
+    "country": "BF",
+    "kind": "media",
+    "owner": "le-pays",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Folha Ciência",
+    "url": "https://feeds.folha.uol.com.br/ciencia/rss091.xml",
+    "lang": "pt",
+    "country": "BR",
+    "kind": "media",
+    "owner": "folha",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Folha de S.Paulo",
+    "url": "https://feeds.folha.uol.com.br/emcimadahora/rss091.xml",
+    "lang": "pt",
+    "country": "BR",
+    "kind": "media",
+    "owner": "folha",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "G1",
+    "url": "https://g1.globo.com/rss/g1/",
+    "lang": "pt",
+    "country": "BR",
+    "kind": "media",
+    "owner": "globo",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "La Presse",
+    "url": "https://www.lapresse.ca/actualites/rss",
+    "lang": "fr",
+    "country": "CA",
+    "kind": "media",
+    "owner": "la-presse",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Devoir",
+    "url": "https://www.ledevoir.com/rss/manchettes.xml",
+    "lang": "fr",
+    "country": "CA",
+    "kind": "media",
+    "owner": "le-devoir",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Radio-Canada",
+    "url": "https://ici.radio-canada.ca/rss/4159",
+    "lang": "fr",
+    "country": "CA",
+    "kind": "media",
+    "owner": "cbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Actualite.cd",
+    "url": "https://actualite.cd/rss.xml",
+    "lang": "fr",
+    "country": "CD",
+    "kind": "media",
+    "owner": "actualite-cd",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Africanews",
+    "url": "https://www.africanews.com/feed/rss",
+    "lang": "en",
+    "country": "CG",
+    "kind": "media",
+    "owner": "euronews",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Africanews (fr)",
+    "url": "https://fr.africanews.com/feed/rss",
+    "lang": "fr",
+    "country": "CG",
+    "kind": "media",
+    "owner": "euronews",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Temps",
+    "url": "https://www.letemps.ch/articles.rss",
+    "lang": "fr",
+    "country": "CH",
+    "kind": "media",
+    "owner": "le-temps",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NZZ",
+    "url": "https://www.nzz.ch/recent.rss",
+    "lang": "de",
+    "country": "CH",
+    "kind": "media",
+    "owner": "nzz",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "La Tercera",
+    "url": "https://www.latercera.com/arc/outboundfeeds/rss/?outputType=xml",
+    "lang": "es",
+    "country": "CL",
+    "kind": "media",
+    "owner": "copesa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El Tiempo",
+    "url": "https://www.eltiempo.com/rss/mundo.xml",
+    "lang": "es",
+    "country": "CO",
+    "kind": "media",
+    "owner": "el-tiempo",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "14ymedio",
+    "url": "https://www.14ymedio.com/rss",
+    "lang": "es",
+    "country": "CU",
+    "kind": "media",
+    "owner": "14ymedio",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Der Spiegel",
+    "url": "https://www.spiegel.de/schlagzeilen/index.rss",
+    "lang": "de",
+    "country": "DE",
+    "kind": "media",
+    "owner": "spiegel",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "DW (ar)",
+    "url": "https://rss.dw.com/rdf/rss-ar-all",
+    "lang": "ar",
+    "country": "DE",
+    "kind": "media",
+    "owner": "dw",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "DW (de)",
+    "url": "https://rss.dw.com/rdf/rss-de-all",
+    "lang": "de",
+    "country": "DE",
+    "kind": "media",
+    "owner": "dw",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "DW (en)",
+    "url": "https://rss.dw.com/rdf/rss-en-all",
+    "lang": "en",
+    "country": "DE",
+    "kind": "media",
+    "owner": "dw",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Tagesschau",
+    "url": "https://www.tagesschau.de/xml/rss2/",
+    "lang": "de",
+    "country": "DE",
+    "kind": "media",
+    "owner": "ard",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "DR",
+    "url": "https://www.dr.dk/nyheder/service/feeds/allenyheder",
+    "lang": "da",
+    "country": "DK",
+    "kind": "media",
+    "owner": "dr",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "TSA Algérie",
+    "url": "https://www.tsa-algerie.com/feed/",
+    "lang": "fr",
+    "country": "DZ",
+    "kind": "media",
+    "owner": "tsa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El Universo",
+    "url": "https://www.eluniverso.com/arc/outboundfeeds/rss/?outputType=xml",
+    "lang": "es",
+    "country": "EC",
+    "kind": "media",
+    "owner": "el-universo",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Daily News Egypt",
+    "url": "https://www.dailynewsegypt.com/feed/",
+    "lang": "en",
+    "country": "EG",
+    "kind": "media",
+    "owner": "dne",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El Mundo",
+    "url": "https://e00-elmundo.uecdn.es/elmundo/rss/portada.xml",
+    "lang": "es",
+    "country": "ES",
+    "kind": "media",
+    "owner": "unidad-editorial",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El País",
+    "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada",
+    "lang": "es",
+    "country": "ES",
+    "kind": "media",
+    "owner": "prisa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El País América",
+    "url": "https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/america/portada",
+    "lang": "es",
+    "country": "ES",
+    "kind": "media",
+    "owner": "prisa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Ethiopian Monitor",
+    "url": "https://ethiopianmonitor.com/feed/",
+    "lang": "en",
+    "country": "ET",
+    "kind": "media",
+    "owner": "ethiopian-monitor",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Yle",
+    "url": "https://feeds.yle.fi/uutiset/v1/recent.rss?publisherIds=YLE_UUTISET",
+    "lang": "fi",
+    "country": "FI",
+    "kind": "media",
+    "owner": "yle",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "20 Minutes",
+    "url": "https://www.20minutes.fr/feeds/rss-une.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "20minutes",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Courrier international",
+    "url": "https://www.courrierinternational.com/feed/all/rss.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "le-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Euronews",
+    "url": "https://www.euronews.com/rss",
+    "lang": "en",
+    "country": "FR",
+    "kind": "media",
+    "owner": "euronews",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Euronews (fr)",
+    "url": "https://fr.euronews.com/rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "euronews",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "France 24",
+    "url": "https://www.france24.com/fr/rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "France 24 (ar)",
+    "url": "https://www.france24.com/ar/rss",
+    "lang": "ar",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "France 24 (en)",
+    "url": "https://www.france24.com/en/rss",
+    "lang": "en",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "France 24 (es)",
+    "url": "https://www.france24.com/es/rss",
+    "lang": "es",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "franceinfo",
+    "url": "https://www.francetvinfo.fr/titres.rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-tv",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Jeune Afrique",
+    "url": "https://www.jeuneafrique.com/feed/",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "jeune-afrique",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "La Croix",
+    "url": "https://www.la-croix.com/RSS/UNIVERS",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "bayard",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Figaro",
+    "url": "https://www.lefigaro.fr/rss/figaro_actualites.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "dassault",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Monde",
+    "url": "https://www.lemonde.fr/rss/une.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "le-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Monde Planète",
+    "url": "https://www.lemonde.fr/planete/rss_full.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "le-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Monde Sciences",
+    "url": "https://www.lemonde.fr/sciences/rss_full.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "le-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Libération",
+    "url": "https://www.liberation.fr/arc/outboundfeeds/rss-all/collection/accueil-une/?outputType=xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "liberation",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Ouest-France",
+    "url": "https://www.ouest-france.fr/rss/une",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "sipa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Reporterre",
+    "url": "https://reporterre.net/spip.php?page=backend",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "reporterre",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "RFI",
+    "url": "https://www.rfi.fr/fr/rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "RFI Afrique",
+    "url": "https://www.rfi.fr/fr/afrique/rss",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "france-medias-monde",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Sciences et Avenir",
+    "url": "https://www.sciencesetavenir.fr/rss.xml",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "challenges",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Conversation (fr)",
+    "url": "https://theconversation.com/fr/articles.atom",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "media",
+    "owner": "the-conversation",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Afrique",
+    "url": "https://feeds.bbci.co.uk/afrique/rss.xml",
+    "lang": "fr",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Arabic",
+    "url": "https://feeds.bbci.co.uk/arabic/rss.xml",
+    "lang": "ar",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Brasil",
+    "url": "https://feeds.bbci.co.uk/portuguese/rss.xml",
+    "lang": "pt",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Chinese",
+    "url": "https://feeds.bbci.co.uk/zhongwen/simp/rss.xml",
+    "lang": "zh",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Hindi",
+    "url": "https://feeds.bbci.co.uk/hindi/rss.xml",
+    "lang": "hi",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Indonesia",
+    "url": "https://feeds.bbci.co.uk/indonesia/rss.xml",
+    "lang": "id",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Mundo",
+    "url": "https://feeds.bbci.co.uk/mundo/rss.xml",
+    "lang": "es",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC News",
+    "url": "https://feeds.bbci.co.uk/news/rss.xml",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Russian",
+    "url": "https://feeds.bbci.co.uk/russian/rss.xml",
+    "lang": "ru",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Science",
+    "url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC Swahili",
+    "url": "https://feeds.bbci.co.uk/swahili/rss.xml",
+    "lang": "sw",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "BBC World",
+    "url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "bbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Medical Xpress",
+    "url": "https://medicalxpress.com/rss-feed/",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "science-x",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "New Scientist",
+    "url": "https://www.newscientist.com/feed/home/",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "daily-mail-group",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Phys.org",
+    "url": "https://phys.org/rss-feed/",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "science-x",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Guardian Environment",
+    "url": "https://www.theguardian.com/environment/rss",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "guardian",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Guardian Global development",
+    "url": "https://www.theguardian.com/global-development/rss",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "guardian",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Guardian World",
+    "url": "https://www.theguardian.com/world/rss",
+    "lang": "en",
+    "country": "GB",
+    "kind": "media",
+    "owner": "guardian",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Prensa Libre",
+    "url": "https://www.prensalibre.com/feed/",
+    "lang": "es",
+    "country": "GT",
+    "kind": "media",
+    "owner": "prensa-libre",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Ming Pao",
+    "url": "https://news.mingpao.com/rss/ins/s00001.xml",
+    "lang": "zh",
+    "country": "HK",
+    "kind": "media",
+    "owner": "mingpao",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "South China Morning Post",
+    "url": "https://www.scmp.com/rss/91/feed",
+    "lang": "en",
+    "country": "HK",
+    "kind": "media",
+    "owner": "scmp",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Le Nouvelliste",
+    "url": "https://lenouvelliste.com/feed",
+    "lang": "fr",
+    "country": "HT",
+    "kind": "media",
+    "owner": "nouvelliste",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "RTÉ",
+    "url": "https://www.rte.ie/feeds/rss/?index=/news/",
+    "lang": "en",
+    "country": "IE",
+    "kind": "media",
+    "owner": "rte",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Dainik Bhaskar",
+    "url": "https://www.bhaskar.com/rss-v1--category-1061.xml",
+    "lang": "hi",
+    "country": "IN",
+    "kind": "media",
+    "owner": "bhaskar",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Hindustan Times",
+    "url": "https://www.hindustantimes.com/feeds/rss/india-news/rssfeed.xml",
+    "lang": "en",
+    "country": "IN",
+    "kind": "media",
+    "owner": "ht-media",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Indian Express",
+    "url": "https://indianexpress.com/feed/",
+    "lang": "en",
+    "country": "IN",
+    "kind": "media",
+    "owner": "indian-express",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Hindu",
+    "url": "https://www.thehindu.com/news/national/feeder/default.rss",
+    "lang": "en",
+    "country": "IN",
+    "kind": "media",
+    "owner": "the-hindu",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Hindu Sci-Tech",
+    "url": "https://www.thehindu.com/sci-tech/feeder/default.rss",
+    "lang": "en",
+    "country": "IN",
+    "kind": "media",
+    "owner": "the-hindu",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Times of India",
+    "url": "https://timesofindia.indiatimes.com/rssfeedstopstories.cms",
+    "lang": "en",
+    "country": "IN",
+    "kind": "media",
+    "owner": "times-group",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Tehran Times",
+    "url": "https://www.tehrantimes.com/rss",
+    "lang": "en",
+    "country": "IR",
+    "kind": "media",
+    "owner": "tehran-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "ANSA",
+    "url": "https://www.ansa.it/sito/notizie/topnews/topnews_rss.xml",
+    "lang": "it",
+    "country": "IT",
+    "kind": "media",
+    "owner": "ansa",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "la Repubblica",
+    "url": "https://www.repubblica.it/rss/homepage/rss2.0.xml",
+    "lang": "it",
+    "country": "IT",
+    "kind": "media",
+    "owner": "gedi",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Jamaica Gleaner",
+    "url": "https://jamaica-gleaner.com/feed/rss.xml",
+    "lang": "en",
+    "country": "JM",
+    "kind": "media",
+    "owner": "gleaner",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Mainichi (en)",
+    "url": "https://mainichi.jp/rss/etc/english_latest.rss",
+    "lang": "en",
+    "country": "JP",
+    "kind": "media",
+    "owner": "mainichi",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NHK World",
+    "url": "https://www3.nhk.or.jp/rss/news/cat0.xml",
+    "lang": "ja",
+    "country": "JP",
+    "kind": "media",
+    "owner": "nhk",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Japan Times",
+    "url": "https://www.japantimes.co.jp/feed/",
+    "lang": "en",
+    "country": "JP",
+    "kind": "media",
+    "owner": "japan-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "朝日新聞",
+    "url": "https://www.asahi.com/rss/asahi/newsheadlines.rdf",
+    "lang": "ja",
+    "country": "JP",
+    "kind": "media",
+    "owner": "asahi",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Astana Times",
+    "url": "https://astanatimes.com/feed/",
+    "lang": "en",
+    "country": "KZ",
+    "kind": "media",
+    "owner": "astana-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Meduza",
+    "url": "https://meduza.io/rss/all",
+    "lang": "ru",
+    "country": "LV",
+    "kind": "media",
+    "owner": "meduza",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Novaya Gazeta Europe",
+    "url": "https://novayagazeta.eu/feed/rss",
+    "lang": "ru",
+    "country": "LV",
+    "kind": "media",
+    "owner": "novaya",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Hespress (fr)",
+    "url": "https://fr.hespress.com/feed",
+    "lang": "fr",
+    "country": "MA",
+    "kind": "media",
+    "owner": "hespress",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Madagascar Tribune",
+    "url": "https://www.madagascar-tribune.com/spip.php?page=backend",
+    "lang": "fr",
+    "country": "MG",
+    "kind": "media",
+    "owner": "mtribune",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Mexico News Daily",
+    "url": "https://mexiconewsdaily.com/feed/",
+    "lang": "en",
+    "country": "MX",
+    "kind": "media",
+    "owner": "mnd",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Malay Mail",
+    "url": "https://www.malaymail.com/feed/rss/malaysia",
+    "lang": "en",
+    "country": "MY",
+    "kind": "media",
+    "owner": "malay-mail",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Mozambique - Club of Mozambique",
+    "url": "https://clubofmozambique.com/feed/",
+    "lang": "en",
+    "country": "MZ",
+    "kind": "media",
+    "owner": "club-moz",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Namibian",
+    "url": "https://www.namibian.com.na/feed/",
+    "lang": "en",
+    "country": "NA",
+    "kind": "media",
+    "owner": "namibian",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Premium Times",
+    "url": "https://www.premiumtimesng.com/feed",
+    "lang": "en",
+    "country": "NG",
+    "kind": "media",
+    "owner": "premium-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Punch",
+    "url": "https://punchng.com/feed/",
+    "lang": "en",
+    "country": "NG",
+    "kind": "media",
+    "owner": "punch",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NOS",
+    "url": "https://feeds.nos.nl/nosnieuwsalgemeen",
+    "lang": "nl",
+    "country": "NL",
+    "kind": "media",
+    "owner": "nos",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NRC",
+    "url": "https://www.nrc.nl/rss/",
+    "lang": "nl",
+    "country": "NL",
+    "kind": "media",
+    "owner": "mediahuis",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Moscow Times",
+    "url": "https://www.themoscowtimes.com/rss/news",
+    "lang": "en",
+    "country": "NL",
+    "kind": "media",
+    "owner": "moscow-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Aftenposten",
+    "url": "https://www.aftenposten.no/rss",
+    "lang": "no",
+    "country": "NO",
+    "kind": "media",
+    "owner": "schibsted",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NRK",
+    "url": "https://www.nrk.no/toppsaker.rss",
+    "lang": "no",
+    "country": "NO",
+    "kind": "media",
+    "owner": "nrk",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Kathmandu Post",
+    "url": "https://kathmandupost.com/rss",
+    "lang": "en",
+    "country": "NP",
+    "kind": "media",
+    "owner": "kantipur",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "RNZ",
+    "url": "https://www.rnz.co.nz/rss/national.xml",
+    "lang": "en",
+    "country": "NZ",
+    "kind": "media",
+    "owner": "rnz",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "El Comercio (PE)",
+    "url": "https://elcomercio.pe/arc/outboundfeeds/rss/?outputType=xml",
+    "lang": "es",
+    "country": "PE",
+    "kind": "media",
+    "owner": "el-comercio-pe",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Tahiti Infos",
+    "url": "https://www.tahiti-infos.com/xml/syndication.rss",
+    "lang": "fr",
+    "country": "PF",
+    "kind": "media",
+    "owner": "tahiti-infos",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Philippine Daily Inquirer",
+    "url": "https://www.inquirer.net/fullfeed",
+    "lang": "en",
+    "country": "PH",
+    "kind": "media",
+    "owner": "inquirer",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Rappler",
+    "url": "https://www.rappler.com/feed/",
+    "lang": "en",
+    "country": "PH",
+    "kind": "media",
+    "owner": "rappler",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Dawn",
+    "url": "https://www.dawn.com/feeds/home",
+    "lang": "en",
+    "country": "PK",
+    "kind": "media",
+    "owner": "dawn",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Observador",
+    "url": "https://observador.pt/feed/",
+    "lang": "pt",
+    "country": "PT",
+    "kind": "media",
+    "owner": "observador",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Al Jazeera",
+    "url": "https://www.aljazeera.com/xml/rss/all.xml",
+    "lang": "en",
+    "country": "QA",
+    "kind": "media",
+    "owner": "al-jazeera",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Al Jazeera (ar)",
+    "url": "https://www.aljazeera.net/aljazeerarss/a7c186be-1baa-4bd4-9d80-a84db769f779/73d0e1b4-532f-45ef-b135-bfdff8b8cab9",
+    "lang": "ar",
+    "country": "QA",
+    "kind": "media",
+    "owner": "al-jazeera",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Arab News",
+    "url": "https://www.arabnews.com/rss.xml",
+    "lang": "en",
+    "country": "SA",
+    "kind": "media",
+    "owner": "srmg",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Asharq Al-Awsat (en)",
+    "url": "https://english.aawsat.com/feed",
+    "lang": "en",
+    "country": "SA",
+    "kind": "media",
+    "owner": "srmg",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "SVT Nyheter",
+    "url": "https://www.svt.se/nyheter/rss.xml",
+    "lang": "sv",
+    "country": "SE",
+    "kind": "media",
+    "owner": "svt",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Straits Times",
+    "url": "https://www.straitstimes.com/news/world/rss.xml",
+    "lang": "en",
+    "country": "SG",
+    "kind": "media",
+    "owner": "sph",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Bangkok Post",
+    "url": "https://www.bangkokpost.com/rss/data/topstories.xml",
+    "lang": "en",
+    "country": "TH",
+    "kind": "media",
+    "owner": "bangkok-post",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Daily Sabah",
+    "url": "https://www.dailysabah.com/rssFeed/turkey",
+    "lang": "en",
+    "country": "TR",
+    "kind": "media",
+    "owner": "turkuvaz",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Hürriyet",
+    "url": "https://www.hurriyet.com.tr/rss/anasayfa",
+    "lang": "tr",
+    "country": "TR",
+    "kind": "media",
+    "owner": "demiroren",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Taipei Times",
+    "url": "https://www.taipeitimes.com/xml/index.rss",
+    "lang": "en",
+    "country": "TW",
+    "kind": "media",
+    "owner": "taipei-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Mongabay",
+    "url": "https://news.mongabay.com/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "media",
+    "owner": "mongabay",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Mongabay (fr)",
+    "url": "https://fr.mongabay.com/feed/",
+    "lang": "fr",
+    "country": "US",
+    "kind": "media",
+    "owner": "mongabay",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "NPR",
+    "url": "https://feeds.npr.org/1001/rss.xml",
+    "lang": "en",
+    "country": "US",
+    "kind": "media",
+    "owner": "npr",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "PBS NewsHour",
+    "url": "https://www.pbs.org/newshour/feeds/rss/headlines",
+    "lang": "en",
+    "country": "US",
+    "kind": "media",
+    "owner": "pbs",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Science (AAAS) News",
+    "url": "https://www.science.org/rss/news_current.xml",
+    "lang": "en",
+    "country": "US",
+    "kind": "media",
+    "owner": "aaas",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "STAT News",
+    "url": "https://www.statnews.com/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "media",
+    "owner": "stat",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Lusaka Times",
+    "url": "https://www.lusakatimes.com/feed/",
+    "lang": "en",
+    "country": "ZM",
+    "kind": "media",
+    "owner": "lusaka-times",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Herald (ZW)",
+    "url": "https://www.herald.co.zw/feed/",
+    "lang": "en",
+    "country": "ZW",
+    "kind": "media",
+    "owner": "zimpapers",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Positivr",
+    "url": "https://positivr.fr/feed/",
+    "lang": "fr",
+    "country": "FR",
+    "kind": "solutions",
+    "owner": "positivr",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Positive News",
+    "url": "https://www.positive.news/feed/",
+    "lang": "en",
+    "country": "GB",
+    "kind": "solutions",
+    "owner": "positive-news",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Good News Network",
+    "url": "https://www.goodnewsnetwork.org/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "solutions",
+    "owner": "gnn",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "Reasons to be Cheerful",
+    "url": "https://reasonstobecheerful.world/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "solutions",
+    "owner": "rtbc",
+    "verifie_le": "2026-09-18"
+  },
+  {
+    "name": "The Optimist Daily",
+    "url": "https://www.optimistdaily.com/feed/",
+    "lang": "en",
+    "country": "US",
+    "kind": "solutions",
+    "owner": "optimist-daily",
+    "verifie_le": "2026-09-18"
+  }
+]

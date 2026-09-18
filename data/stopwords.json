@@ -1,0 +1,15 @@
+{
+  "_doc": "Mots vides pour la normalisation des titres (recoupement lexical). Liste courte, multilingue, volontairement générique.",
+  "words": ["the","a","an","and","or","of","to","in","on","for","with","at","by","from","as","is","are","was","were","be","been","has","have","had","it","its","this","that","these","those","after","before","over","under","into","than","more","most","new","says","said","say","will","can","could","may","might","not","no","but","about","up","out","how","why","what","who","which","when","where","their","they","them","his","her","he","she","we","our","you","your","one","two","first","last","year","years","world","news",
+  "le","la","les","l","un","une","des","du","de","d","et","ou","en","au","aux","à","a","dans","sur","pour","par","avec","sans","ce","cet","cette","ces","son","sa","ses","leur","leurs","qui","que","quoi","dont","où","est","sont","été","être","avoir","ont","plus","moins","très","pas","ne","n","se","s","y","il","elle","ils","elles","nous","vous","on","comme","mais","donc","car","ni","aussi","après","avant","entre","vers","chez","selon","depuis","encore","déjà","ans","an","monde",
+  "el","los","las","una","unos","unas","y","o","u","del","al","con","sin","por","para","como","más","menos","muy","es","son","fue","ha","han","se","su","sus","lo","que","este","esta","estos","estas","ese","esa","pero","también","ya","año","años","mundo","tras","sobre","entre","hasta","desde","durante",
+  "o","os","as","um","uma","uns","umas","e","ou","do","da","dos","das","no","na","nos","nas","com","sem","por","para","como","mais","menos","muito","é","são","foi","tem","têm","se","seu","sua","seus","suas","que","este","esta","isso","mas","também","já","ano","anos","mundo","após","sobre","entre","até","desde",
+  "der","die","das","ein","eine","einer","eines","einem","einen","und","oder","von","zu","im","in","am","an","auf","für","mit","ohne","bei","nach","vor","über","unter","aus","ist","sind","war","waren","hat","haben","wird","werden","sich","nicht","auch","noch","mehr","als","wie","wenn","aber","den","dem","des","jahr","jahre","welt",
+  "il","lo","la","i","gli","le","un","uno","una","e","o","di","a","da","in","con","su","per","tra","fra","che","chi","non","più","anche","come","dopo","prima","sono","è","ha","hanno","anno","anni","mondo",
+  "de","het","een","en","of","van","in","op","voor","met","bij","naar","uit","aan","is","zijn","was","heeft","hebben","niet","ook","meer","dan","als","jaar","wereld",
+  "и","в","на","с","по","за","из","от","до","для","не","что","как","это","он","она","они","мы","вы","его","ее","их","год","года","лет","мир",
+  "و","في","من","على","إلى","عن","أن","إن","لا","ما","هذا","هذه","ذلك","التي","الذي","مع","بعد","قبل","كل","عام","العالم",
+  "の","に","は","を","が","と","で","も","た","て","から","まで","や","へ","な","ね","よ","か","こと","年",
+  "的","了","在","是","和","与","及","或","为","对","从","到","也","就","都","年","中","上","下","一","个","这","那","有","不","人","将","被","后","前",
+  "이","가","은","는","을","를","의","에","에서","으로","로","과","와","도","년"]
+}

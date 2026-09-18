@@ -1,0 +1,13 @@
+{
+  "_doc": "Agrégateurs : ne comptent jamais comme rédaction (FIABILITE.md). Comparaison par suffixe de domaine.",
+  "domains": [
+    "news.google.com", "news.yahoo.com", "yahoo.com", "msn.com", "flipboard.com", "feedly.com", "inoreader.com",
+    "newsnow.co.uk", "newsbreak.com", "smartnews.com", "ground.news", "allsides.com", "drudgereport.com",
+    "headtopics.com", "newsfeed.time.com", "pressreader.com", "muckrack.com", "apple.news", "bing.com",
+    "medium.com", "substack.com", "blogspot.com", "wordpress.com", "tumblr.com", "pinterest.com",
+    "reddit.com", "bsky.app", "mastodon.social", "twitter.com", "x.com", "facebook.com", "instagram.com",
+    "tiktok.com", "youtube.com", "linkedin.com", "threads.net", "telegram.org", "t.me", "whatsapp.com",
+    "prnewswire.com", "businesswire.com", "globenewswire.com", "newswire.ca", "einpresswire.com", "prweb.com",
+    "openpr.com", "marketscreener.com", "streetinsider.com", "wikipedia.org", "wikinews.org"
+  ]
+}
