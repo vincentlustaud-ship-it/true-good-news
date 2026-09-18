@@ -378,15 +378,6 @@
     "verifie_le": "2026-09-18"
   },
   {
-    "name": "Actualite.cd",
-    "url": "https://actualite.cd/rss.xml",
-    "lang": "fr",
-    "country": "CD",
-    "kind": "media",
-    "owner": "actualite-cd",
-    "verifie_le": "2026-09-18"
-  },
-  {
     "name": "Africanews",
     "url": "https://www.africanews.com/feed/rss",
     "lang": "en",
@@ -945,15 +936,6 @@
     "verifie_le": "2026-09-18"
   },
   {
-    "name": "Ming Pao",
-    "url": "https://news.mingpao.com/rss/ins/s00001.xml",
-    "lang": "zh",
-    "country": "HK",
-    "kind": "media",
-    "owner": "mingpao",
-    "verifie_le": "2026-09-18"
-  },
-  {
     "name": "South China Morning Post",
     "url": "https://www.scmp.com/rss/91/feed",
     "lang": "en",
@@ -1170,15 +1152,6 @@
     "verifie_le": "2026-09-18"
   },
   {
-    "name": "Mozambique - Club of Mozambique",
-    "url": "https://clubofmozambique.com/feed/",
-    "lang": "en",
-    "country": "MZ",
-    "kind": "media",
-    "owner": "club-moz",
-    "verifie_le": "2026-09-18"
-  },
-  {
     "name": "Namibian",
     "url": "https://www.namibian.com.na/feed/",
     "lang": "en",
@@ -1305,15 +1278,6 @@
     "verifie_le": "2026-09-18"
   },
   {
-    "name": "Dawn",
-    "url": "https://www.dawn.com/feeds/home",
-    "lang": "en",
-    "country": "PK",
-    "kind": "media",
-    "owner": "dawn",
-    "verifie_le": "2026-09-18"
-  },
-  {
     "name": "Observador",
     "url": "https://observador.pt/feed/",
     "lang": "pt",
@@ -1374,15 +1338,6 @@
     "country": "SG",
     "kind": "media",
     "owner": "sph",
-    "verifie_le": "2026-09-18"
-  },
-  {
-    "name": "Bangkok Post",
-    "url": "https://www.bangkokpost.com/rss/data/topstories.xml",
-    "lang": "en",
-    "country": "TH",
-    "kind": "media",
-    "owner": "bangkok-post",
     "verifie_le": "2026-09-18"
   },
   {
@@ -1473,15 +1428,6 @@
     "country": "ZM",
     "kind": "media",
     "owner": "lusaka-times",
-    "verifie_le": "2026-09-18"
-  },
-  {
-    "name": "The Herald (ZW)",
-    "url": "https://www.herald.co.zw/feed/",
-    "lang": "en",
-    "country": "ZW",
-    "kind": "media",
-    "owner": "zimpapers",
     "verifie_le": "2026-09-18"
   },
   {

@@ -51,7 +51,7 @@ Tout s'exécute dans `harvest-background` (fonction d'arrière-plan, 15 minutes)
 
 | # | Agent | Fichier | Entrée → sortie |
 |---|---|---|---|
-| 1 | Collecte | `agents/harvest.ts` | 170 flux RSS/Atom vérifiés + 13 requêtes GDELT (une toutes les 5 s) + repérage Bluesky / Mastodon / Reddit → articles bruts dédupliqués (titre, résumé court de l'éditeur, URL, date, média, pays, langue, image en lien) |
+| 1 | Collecte | `agents/harvest.ts` | 164 flux RSS/Atom vérifiés + 21 requêtes GDELT (une toutes les 5 s) + repérage Bluesky / Mastodon / Reddit → articles bruts dédupliqués (titre, résumé court de l'éditeur, URL, date, média, pays, langue, image en lien) |
 | 2 | Recoupement | `agents/corroborate.ts` | regroupement par événement (jetons + termes forts), comptage des rédactions **par propriétaire** (`data/ownership.json`), reprises d'agence, agrégateurs exclus, pays, source primaire, fact-check → niveau |
 | 3 | Qualification | `agents/qualify.ts` | LLM sous `CHARTE-EDITORIALE.md`, sortie JSON contrainte, texte passé comme donnée délimitée, doute ⇒ écartée |
 | 4 | Traduction | `agents/translate.ts` | DeepL FR/EN du titre et du résumé, métadonnées Open Graph si `robots.txt` l'autorise |

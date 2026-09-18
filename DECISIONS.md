@@ -108,6 +108,28 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   Hors fonction d'arrière-plan (`npm run harvest`, tests), aucune date limite n'est fixée et le pool de 3 minutes
   subsiste comme simple garde-fou contre un emballement. La logique de reprise elle-même — 4 tentatives, 8 s, 20 s,
   40 s, délai de 20 s par tentative — n'a pas changé.
+- **Six flux retirés : protection anti-bot qui bloque les adresses d'hébergeur.** Constaté sur plusieurs exécutions
+  Netlify, jamais en local : ces flux répondent par une page Cloudflare « Just a moment… » (403) ou par un 451.
+  La protection vise les plages d'adresses des hébergeurs, pas les adresses résidentielles utilisées en test —
+  d'où un diagnostic local systématiquement vert et une collecte systématiquement vide en production. Cinq des six
+  domaines sont bien servis derrière Cloudflare (en-tête `cf-ray` présent) ; Bangkok Post est servi par `bytex`, ce
+  qui correspond plutôt au 451 observé.
+  Contourner supposerait un proxy tiers : coût et dépendance injustifiés pour six flux sur 170, et surtout contraire
+  à la règle 5 de `CLAUDE.md` — si une source ferme l'accès, on s'arrête et on le documente.
+
+  | Flux | URL | Langue / pays |
+  |---|---|---|
+  | Actualite.cd | `https://actualite.cd/rss.xml` | fr / CD |
+  | Ming Pao | `https://news.mingpao.com/rss/ins/s00001.xml` | zh / HK |
+  | Club of Mozambique | `https://clubofmozambique.com/feed/` | en / MZ |
+  | Dawn | `https://www.dawn.com/feeds/home` | en / PK |
+  | Bangkok Post | `https://www.bangkokpost.com/rss/data/topstories.xml` | en / TH |
+  | The Herald (ZW) | `https://www.herald.co.zw/feed/` | en / ZW |
+
+  **Réversible.** Les URL sont conservées ci-dessus : si un proxy sortant est mis en place un jour, ces six flux
+  pourront être réintroduits tels quels. Ils restent par ailleurs atteignables indirectement par GDELT, et leurs
+  domaines figurent tous dans `data/ownership.json`, donc le comptage des rédactions indépendantes n'est pas dégradé.
+  Couverture après retrait : 164 flux, 20 langues, 58 pays (contre 170 / 20 / 61).
 - **Flux RSS surdimensionnés : troncature silencieuse corrigée.** Prensa Libre publie un flux de 4,03 Mo, au-delà du
   plafond de 3 Mo du lecteur. `fetchText` coupait le corps et rendait le fragment tel quel ; le parseur échouait sur un
   XML sectionné en plein élément et la journée entière du flux était perdue (« XML illisible »). Le plafond passe à
