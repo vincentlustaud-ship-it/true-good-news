@@ -55,6 +55,24 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   every 5 seconds » à toute requête, même isolée (limitation par adresse IP partagée) ; la recherche publique
   Bluesky renvoie 403 quel que soit l'agent. Le code respecte l'espacement de 5 s et dégrade proprement (repli RSS,
   Mastodon seul) ; à surveiller dans le rapport `/admin` après le premier déploiement.
+- **Couverture thématique du repérage GDELT élargie : 13 → 21 requêtes.** Les requêtes ne couvraient que la santé et
+  l'environnement ; tout le reste de la liste « Admissible » de `CHARTE-EDITORIALE.md` était mécaniquement hors
+  d'atteinte. Ajout de la découverte scientifique à effet concret, de l'accès nouvellement obtenu (eau, électricité,
+  école, soins, logement), de la réconciliation et du retour de personnes déplacées, de la restitution de patrimoine
+  et de la reconstruction achevée. Douze langues couvertes.
+  Les thèmes **exclus** par la charte (politique, militaire et diplomatique, économie partisane) sont délibérément
+  absents : les repérer reviendrait à dépenser des requêtes GDELT et du budget d'appels LLM sur des candidates qui
+  seraient écartées à l'étape de qualification.
+  Coût mesuré : l'espacement poli passe de 302 s à 343 s (+42 s). Le cycle par requête vaut `max(5,2 s, temps de
+  réponse)` — le temps de réponse est absorbé par l'espacement tant qu'il reste sous 5,2 s, vérifié en simulation
+  (0 s → 5,2 s/requête ; 3 s → 5,9 s ; 8 s → 8,6 s). Conséquence sur la marge : voir la note ci-dessous.
+- **Marge de durée d'une fonction d'arrière-plan : à surveiller, pas encore corrigée.** Avec 21 + 45 requêtes GDELT,
+  le pipeline tient dans les 900 s en fonctionnement normal (550 à 737 s selon la latence de qualification), mais le
+  cumul « qualification lente (10 s/appel) + budget d'attente 429 entièrement consommé » atteint 917 s, soit un
+  dépassement d'environ 17 s. La liste de requêtes n'a volontairement pas été tronquée pour y remédier : les pistes
+  chiffrées (concurrence de qualification portée de 4 à 8, `maxGdeltCorroboration` ramené de 45 à 35, budget d'attente
+  429 ramené de 180 s à 120 s, ou découpage en deux fonctions chaînées) sont soumises à l'arbitrage du porteur du
+  projet. À revoir dès la première exécution réelle, qui donnera la latence vraie des appels de qualification.
 - **Limitation de débit GDELT : 4 tentatives, attente croissante, budget global.** Une seule nouvelle tentative après
   8 s ne suffisait pas quand GDELT reste limité plus longtemps : la requête abandonnait en silence. Désormais 4
   tentatives au plus, avec 8 s, 20 s puis 40 s d'attente. Ces attentes sont prises sur un **budget partagé de

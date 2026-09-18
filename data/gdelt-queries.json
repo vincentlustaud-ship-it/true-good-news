@@ -1,18 +1,26 @@
 {
-  "_doc": "Requêtes de repérage GDELT (SOURCES.md). `tone>3` pré-filtre le positif ; ce n'est qu'un signal de repérage, jamais un critère de publication. Une requête = un appel, espacés de 5 s.",
+  "_doc": "Requêtes de repérage GDELT (SOURCES.md). `tone>3` pré-filtre le positif ; ce n'est qu'un signal de repérage, jamais un critère de publication. Une requête = un appel, espacés de 5 s. Thèmes calqués sur la liste « Admissible » de CHARTE-EDITORIALE.md.",
   "queries": [
     { "lang": "en", "query": "(eradicated OR eradication OR \"disease-free\" OR \"cases fell\" OR \"vaccine rollout\" OR \"clean water\" OR \"species recovery\" OR \"population rebound\" OR reforestation OR \"restored\" OR \"rescued\" OR \"cured\" OR \"first time in decades\" OR \"record low\" OR \"back from the brink\") tone>3 sourcelang:english" },
     { "lang": "en", "query": "(\"World Health Organization\" OR \"WHO\" OR \"UNICEF\" OR \"IUCN\" OR \"Red List\" OR \"Lancet\" OR \"clinical trial\" OR \"conservation\" OR \"endangered\") (progress OR success OR milestone OR recovery OR breakthrough) tone>3 sourcelang:english" },
+    { "lang": "en", "query": "(breakthrough OR discovery OR \"first successful\" OR \"gene therapy\" OR \"trial results\" OR \"new species\" OR \"world first\") (researchers OR scientists OR study OR trial OR team) tone>3 sourcelang:english" },
+    { "lang": "en", "query": "(\"electricity access\" OR \"connected to the grid\" OR \"homes handed over\" OR \"houses built\" OR \"hospital opened\" OR \"school opened\" OR \"school enrolment\" OR \"school enrollment\" OR literacy OR \"child mortality fell\" OR \"life expectancy rose\") tone>3 sourcelang:english" },
+    { "lang": "en", "query": "(reconciliation OR \"returned home\" OR \"displaced families returned\" OR repatriated OR restitution OR \"artefacts returned\" OR \"artifacts returned\" OR rebuilt OR \"reopened after\" OR \"restored to service\") tone>3 sourcelang:english" },
     { "lang": "fr", "query": "(éradiqué OR éradication OR \"eau potable\" OR guéri OR guéris OR vaccin OR reboisement OR reforestation OR \"espèce\" OR sauvés OR sauvetage OR retrouvé OR reconstruit OR \"accès à l'électricité\" OR \"pour la première fois\") tone>3 sourcelang:french" },
+    { "lang": "fr", "query": "(\"accès à l'eau\" OR \"raccordés à l'électricité\" OR \"logements livrés\" OR \"logements construits\" OR \"hôpital ouvert\" OR \"école ouverte\" OR scolarisation OR alphabétisation OR \"mortalité infantile\" OR \"espérance de vie\") tone>3 sourcelang:french" },
+    { "lang": "fr", "query": "(percée OR découverte OR \"essai clinique\" OR \"thérapie génique\" OR réconciliation OR \"retour des déplacés\" OR restitution OR reconstruction OR \"rouvert après\" OR \"remis en service\") tone>3 sourcelang:french" },
     { "lang": "es", "query": "(erradicado OR erradicación OR \"agua potable\" OR curado OR vacuna OR reforestación OR especie OR rescatados OR rescate OR recuperación OR \"por primera vez\") tone>3 sourcelang:spanish" },
+    { "lang": "es", "query": "(descubrimiento OR \"ensayo clínico\" OR \"acceso a la electricidad\" OR \"viviendas entregadas\" OR \"viviendas construidas\" OR escolarización OR alfabetización OR reconciliación OR restitución OR reconstrucción OR reabierto) tone>3 sourcelang:spanish" },
     { "lang": "pt", "query": "(erradicado OR erradicação OR \"água potável\" OR curado OR vacina OR reflorestamento OR espécie OR resgatados OR resgate OR recuperação OR \"pela primeira vez\") tone>3 sourcelang:portuguese" },
+    { "lang": "pt", "query": "(descoberta OR \"ensaio clínico\" OR \"acesso à eletricidade\" OR \"casas entregues\" OR \"casas construídas\" OR escolarização OR alfabetização OR reconciliação OR restituição OR reconstrução OR reaberto) tone>3 sourcelang:portuguese" },
     { "lang": "de", "query": "(ausgerottet OR Impfstoff OR geheilt OR Trinkwasser OR Aufforstung OR Artenschutz OR gerettet OR Rettung OR \"zum ersten Mal\" OR Erholung) tone>3 sourcelang:german" },
-    { "lang": "ar", "query": "(القضاء OR لقاح OR شفاء OR \"مياه الشرب\" OR تشجير OR إنقاذ OR \"لأول مرة\" OR تعافي) tone>3 sourcelang:arabic" },
-    { "lang": "hi", "query": "(उन्मूलन OR टीका OR \"पीने का पानी\" OR बचाव OR \"पहली बार\" OR इलाज) tone>3 sourcelang:hindi" },
-    { "lang": "zh", "query": "(根除 OR 疫苗 OR 治愈 OR 饮用水 OR 植树造林 OR 救援 OR 获救 OR 首次 OR 恢复) tone>3 sourcelang:chinese" },
-    { "lang": "ja", "query": "(根絶 OR ワクチン OR 治療 OR 救助 OR 保護 OR 回復 OR 初めて) tone>3 sourcelang:japanese" },
-    { "lang": "ru", "query": "(ликвидирован OR вакцина OR вылечен OR \"питьевой воды\" OR спасены OR спасение OR восстановление OR \"впервые\") tone>3 sourcelang:russian" },
-    { "lang": "sw", "query": "(chanjo OR kutokomeza OR \"maji safi\" OR kuokolewa OR uokoaji OR \"kwa mara ya kwanza\") tone>3 sourcelang:swahili" },
-    { "lang": "id", "query": "(vaksin OR sembuh OR \"air bersih\" OR diselamatkan OR penyelamatan OR pemulihan OR \"untuk pertama kalinya\") tone>3 sourcelang:indonesian" }
+    { "lang": "de", "query": "(Entdeckung OR Durchbruch OR \"klinische Studie\" OR Stromzugang OR \"Wohnungen übergeben\" OR \"Wohnungen gebaut\" OR Alphabetisierung OR Schulbesuch OR Versöhnung OR Rückgabe OR Wiederaufbau OR wiedereröffnet) tone>3 sourcelang:german" },
+    { "lang": "ar", "query": "(القضاء OR لقاح OR شفاء OR \"مياه الشرب\" OR تشجير OR إنقاذ OR \"لأول مرة\" OR تعافي OR اكتشاف OR \"إعادة إعمار\" OR المصالحة OR \"عودة النازحين\" OR الكهرباء) tone>3 sourcelang:arabic" },
+    { "lang": "hi", "query": "(उन्मूलन OR टीका OR \"पीने का पानी\" OR बचाव OR \"पहली बार\" OR इलाज OR खोज OR पुनर्निर्माण OR साक्षरता OR बिजली OR पुनर्वास) tone>3 sourcelang:hindi" },
+    { "lang": "zh", "query": "(根除 OR 疫苗 OR 治愈 OR 饮用水 OR 植树造林 OR 救援 OR 获救 OR 首次 OR 恢复 OR 突破 OR 重建 OR 通电 OR 入学率 OR 返乡) tone>3 sourcelang:chinese" },
+    { "lang": "ja", "query": "(根絶 OR ワクチン OR 治療 OR 救助 OR 保護 OR 回復 OR 初めて OR 発見 OR 復興 OR 再建 OR 帰還 OR 就学率) tone>3 sourcelang:japanese" },
+    { "lang": "ru", "query": "(ликвидирован OR вакцина OR вылечен OR \"питьевой воды\" OR спасены OR спасение OR восстановление OR \"впервые\" OR открытие OR восстановлен OR \"возвращение жителей\" OR электрификация) tone>3 sourcelang:russian" },
+    { "lang": "sw", "query": "(chanjo OR kutokomeza OR \"maji safi\" OR kuokolewa OR uokoaji OR \"kwa mara ya kwanza\" OR ugunduzi OR ujenzi OR umeme OR elimu OR \"kurejea nyumbani\") tone>3 sourcelang:swahili" },
+    { "lang": "id", "query": "(vaksin OR sembuh OR \"air bersih\" OR diselamatkan OR penyelamatan OR pemulihan OR \"untuk pertama kalinya\" OR penemuan OR \"pembangunan kembali\" OR listrik OR rekonsiliasi OR \"akses pendidikan\") tone>3 sourcelang:indonesian" }
   ]
 }
