@@ -66,13 +66,22 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   Coût mesuré : l'espacement poli passe de 302 s à 343 s (+42 s). Le cycle par requête vaut `max(5,2 s, temps de
   réponse)` — le temps de réponse est absorbé par l'espacement tant qu'il reste sous 5,2 s, vérifié en simulation
   (0 s → 5,2 s/requête ; 3 s → 5,9 s ; 8 s → 8,6 s). Conséquence sur la marge : voir la note ci-dessous.
-- **Marge de durée d'une fonction d'arrière-plan : à surveiller, pas encore corrigée.** Avec 21 + 45 requêtes GDELT,
-  le pipeline tient dans les 900 s en fonctionnement normal (550 à 737 s selon la latence de qualification), mais le
-  cumul « qualification lente (10 s/appel) + budget d'attente 429 entièrement consommé » atteint 917 s, soit un
-  dépassement d'environ 17 s. La liste de requêtes n'a volontairement pas été tronquée pour y remédier : les pistes
-  chiffrées (concurrence de qualification portée de 4 à 8, `maxGdeltCorroboration` ramené de 45 à 35, budget d'attente
-  429 ramené de 180 s à 120 s, ou découpage en deux fonctions chaînées) sont soumises à l'arbitrage du porteur du
-  projet. À revoir dès la première exécution réelle, qui donnera la latence vraie des appels de qualification.
+- **Marge de durée d'une fonction d'arrière-plan : rétablie par la concurrence de qualification, portée de 4 à 8.**
+  Avec 21 + 45 requêtes GDELT, le cumul « qualification lente (10 s/appel) + budget d'attente 429 entièrement
+  consommé » atteignait 917 s, soit 17 s de trop. Quatre pistes étaient possibles ; c'est la concurrence qui a été
+  retenue, parce qu'elle est la seule **sans contrepartie** : elle ne retire aucune requête de repérage, ne dégrade
+  pas la qualité de recoupement (`maxGdeltCorroboration` reste à 45) et ne réduit pas la résilience aux 429 (le budget
+  d'attente reste à 180 s). Le pire cas retombe à 730 s, soit 2,8 minutes de marge ; le cas médian à 673 s.
+  La liste de requêtes n'a pas été tronquée.
+  **Vérification côté limites Anthropic** (documentation consultée le 18 septembre 2026, Claude Opus 5, palier Start,
+  le plus bas des paliers standards : 1 000 requêtes/min, 2 000 000 jetons d'entrée/min, 400 000 jetons de sortie/min).
+  Charge maximale du pipeline à concurrence 8 : 160 requêtes/min soit 16 %, 163 840 jetons de sortie/min soit 41 %
+  dans l'hypothèse pessimiste où chaque appel sature `max_tokens`, et environ 1 % des jetons d'entrée — le prompt
+  système (1 386 jetons, la charte) est mis en cache et les lectures de cache ne comptent pas dans la limite d'entrée.
+  Deux réserves subsistent, toutes deux absorbées par le SDK (`maxRetries: 3`, en-tête `retry-after` respecté) :
+  une organisation neuve peut démarrer sur le palier « Evaluation », sous les limites publiées ; et une rafale
+  quotidienne partant de zéro peut déclencher les limites d'accélération. À revoir à la première exécution réelle,
+  qui donnera la latence vraie des appels.
 - **Limitation de débit GDELT : 4 tentatives, attente croissante, budget global.** Une seule nouvelle tentative après
   8 s ne suffisait pas quand GDELT reste limité plus longtemps : la requête abandonnait en silence. Désormais 4
   tentatives au plus, avec 8 s, 20 s puis 40 s d'attente. Ces attentes sont prises sur un **budget partagé de

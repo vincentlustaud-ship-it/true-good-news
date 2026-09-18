@@ -53,7 +53,12 @@ export async function qualify(clusters: Cluster[], rep: Reporter, opts: QualifyO
   let fatal: string | null = null;
   let kept = 0, refused = 0, errors = 0;
 
-  await mapLimit(targets, opts.concurrency ?? 4, async (c) => {
+  // Concurrence 8 : c'est ce qui tient la qualification sous les 15 minutes d'une fonction
+  // d'arrière-plan une fois le repérage GDELT élargi. Charge maximale mesurée sur les limites
+  // Claude Opus 5 du palier Start : 16 % des requêtes/minute, 41 % des jetons de sortie/minute,
+  // 1 % des jetons d'entrée/minute (le prompt système est mis en cache et les lectures de cache
+  // ne comptent pas). Les 429 éventuels sont repris par le SDK (maxRetries, en-tête retry-after).
+  await mapLimit(targets, opts.concurrency ?? 8, async (c) => {
     if (fatal) return;
     const now = new Date().toISOString();
     const base = { modele: model, evalue_le: now };
