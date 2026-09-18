@@ -146,6 +146,10 @@ un clic qui supprime l'enregistrement, en-têtes `List-Unsubscribe` / `List-Unsu
   interrogés sans clé ; Reddit seulement avec des identifiants d'application. Depuis la machine de développement,
   GDELT a répondu par sa limite de débit et la recherche Bluesky par un 403 : les deux dégradent proprement et sont à
   surveiller dans le rapport après le premier déploiement.
+- GDELT limite le débit à une requête toutes les 5 secondes. Une requête limitée est retentée jusqu'à 4 fois (8 s,
+  20 s, 40 s), sur un budget d'attente de 3 minutes partagé par toute l'exécution pour tenir dans les 15 minutes
+  d'une fonction d'arrière-plan. Le rapport `/admin` indique combien de fois la limite a été atteinte et si le budget
+  a été épuisé : si c'est le cas tous les matins, il faut réduire `maxGdeltCorroboration` plutôt qu'allonger le budget.
 - Le compteur de vues n'est pas atomique (deux incréments simultanés peuvent en perdre un) : c'est un compteur
   d'affichages, présenté comme tel.
 - La limitation de débit (connexion admin, vues, abonnement) est en mémoire : elle repart de zéro à chaque démarrage

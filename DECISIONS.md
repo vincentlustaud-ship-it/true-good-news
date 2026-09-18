@@ -55,6 +55,15 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   every 5 seconds » à toute requête, même isolée (limitation par adresse IP partagée) ; la recherche publique
   Bluesky renvoie 403 quel que soit l'agent. Le code respecte l'espacement de 5 s et dégrade proprement (repli RSS,
   Mastodon seul) ; à surveiller dans le rapport `/admin` après le premier déploiement.
+- **Limitation de débit GDELT : 4 tentatives, attente croissante, budget global.** Une seule nouvelle tentative après
+  8 s ne suffisait pas quand GDELT reste limité plus longtemps : la requête abandonnait en silence. Désormais 4
+  tentatives au plus, avec 8 s, 20 s puis 40 s d'attente. Ces attentes sont prises sur un **budget partagé de
+  3 minutes pour toute l'exécution** : le pipeline dépense déjà ~5 minutes en espacement poli (58 requêtes au plus, une
+  toutes les 5,2 s) et une fonction d'arrière-plan Netlify est coupée à 15 minutes ; sans plafond, une journée où
+  GDELT limite tout ferait dépasser la limite. Budget épuisé ⇒ abandon immédiat, alerte dans le rapport `/admin`.
+  Le délai par tentative passe de 25 s à 20 s pour la même raison. Seul le traitement du 429 (et de la réponse en
+  clair « Please limit requests », que GDELT sert avec un code 200) change : délai dépassé, réponse non-ok ou corps
+  non-JSON rendent toujours `null` sans nouvelle tentative.
 - **Reddit** n'est interrogé qu'avec des identifiants d'application (`REDDIT_CLIENT_ID/SECRET`), conformément à sa
   politique ; sans identifiants, il est ignoré et consigné.
 - **Fenêtre de collecte** : 24 h avant 04:00 UTC, avec 12 h de tolérance en amont (fuseaux et dates RSS approximatives).

@@ -6,7 +6,7 @@
 import feedsJson from "../data/feeds.json" with { type: "json" };
 import queriesJson from "../data/gdelt-queries.json" with { type: "json" };
 import { readFeed, type FeedDef } from "../lib/rss.ts";
-import { gdeltQuery, toRawArticle } from "../lib/gdelt.ts";
+import { gdeltQuery, gdeltRateLimitStats, toRawArticle } from "../lib/gdelt.ts";
 import { spotBluesky, spotMastodon, spotReddit, type Spotted } from "../lib/social.ts";
 import { fetchOpenGraph } from "../lib/og.ts";
 import { mapLimit } from "../lib/http.ts";
@@ -31,6 +31,14 @@ export function canonicalUrl(url: string): string {
     if (s.endsWith("/")) s = s.slice(0, -1);
     return s;
   } catch { return url; }
+}
+
+/** Consigne l'état de la limitation de débit GDELT : c'est ce qui explique une collecte mondiale pauvre. */
+export function noteRateLimit(rep: Reporter): void {
+  const s = gdeltRateLimitStats();
+  if (!s.limites) return;
+  rep.note(`GDELT a limité le débit ${s.limites} fois, ${s.nouvelles_tentatives} nouvelle(s) tentative(s) (budget d'attente restant : ${s.budget_restant_s} s)`);
+  if (s.budget_epuise) rep.alert("Budget d'attente GDELT épuisé : les requêtes suivantes ont été abandonnées sans nouvelle tentative pour tenir dans la durée d'une fonction d'arrière-plan.");
 }
 
 export async function harvest(opts: HarvestOptions, rep: Reporter): Promise<HarvestResult> {
@@ -76,6 +84,7 @@ export async function harvest(opts: HarvestOptions, rep: Reporter): Promise<Harv
       }
     }
     gdeltOk = answered > 0;
+    noteRateLimit(rep);
     if (!gdeltOk) rep.alert("GDELT indisponible : repli sur les flux RSS directs uniquement (couverture mondiale réduite).");
     rep.endStage(gdeltKept);
   }

@@ -11,6 +11,7 @@
 import { fold, jaccard, sharedCount, strongTerms, tokens, stableId } from "../lib/text.ts";
 import { ownerOf, isAggregator, primarySourceFor, DOI_RE, mediaNameFor, agencyReprint } from "../lib/domains.ts";
 import { gdeltQuery, termsQuery, toRawArticle } from "../lib/gdelt.ts";
+import { noteRateLimit } from "./harvest.ts";
 import { searchFactChecks } from "../lib/factcheck.ts";
 import { env } from "../lib/env.ts";
 import type { Cluster, Evidence, Level, RawArticle, SourceRef } from "./types.ts";
@@ -182,5 +183,6 @@ export async function deepCorroborate(clusters: Cluster[], rep: Reporter, gdeltE
     if (factcheck.dementi) rep.reject("recoupement", c.lead.title, c.lead.url, `dementi fact-check : ${fc.hits.find((h) => h.dementi)?.url ?? "?"}`);
   }
   rep.note(`${calls} requêtes GDELT de recoupement (${unavailable} sans réponse), ${boosted} clusters renforcés`);
+  noteRateLimit(rep);
   rep.endStage(clusters.filter((c) => c.evidence && c.evidence.niveau !== "insuffisant").length);
 }
