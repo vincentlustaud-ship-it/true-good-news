@@ -91,6 +91,23 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   Le délai par tentative passe de 25 s à 20 s pour la même raison. Seul le traitement du 429 (et de la réponse en
   clair « Please limit requests », que GDELT sert avec un code 200) change : délai dépassé, réponse non-ok ou corps
   non-JSON rendent toujours `null` sans nouvelle tentative.
+- **Budget d'attente GDELT : forfait remplacé par un calcul de date limite.** Le forfait de 3 minutes décrit
+  ci-dessus était une constante posée à la main : le code ignorait l'heure de démarrage, l'heure de coupure, les
+  étapes restantes et le nombre de requêtes encore à faire. Il avait été dimensionné quand la qualification tournait à
+  concurrence 4 ; le passage à 8 a divisé ce poste par deux sans que le forfait soit revu. Résultat observé sur une
+  exécution réelle : 603 s au total, deux alertes « budget épuisé », et environ 5 minutes de marge inutilisées.
+  Désormais le pipeline annonce l'instant de coupure (`deadlineAt`, l'entrée du gestionnaire plus 15 minutes) et,
+  à chaque requête, ce que le travail restant réclame encore (`setGdeltReserve`). Une reprise n'est accordée que si
+  elle tient dans `date limite − maintenant − travail restant − marge de sécurité`, la marge étant fixée à **75 s** et
+  jamais entamée. Le budget suit donc l'exécution : une qualification plus rapide que prévu rend immédiatement du
+  temps aux reprises. Mesuré : 285 s disponibles au début de la collecte et 245 s à l'entrée du recoupement, contre
+  180 s forfaitaires en toute circonstance auparavant.
+  Les estimations de travail restant sont **volontairement hautes** (10 s par appel de qualification, 5,2 s par
+  requête GDELT restante, 45 s pour l'édition, la traduction et l'écriture) : les sous-estimer ferait dépasser la
+  limite, les surestimer ne coûte que des reprises refusées.
+  Hors fonction d'arrière-plan (`npm run harvest`, tests), aucune date limite n'est fixée et le pool de 3 minutes
+  subsiste comme simple garde-fou contre un emballement. La logique de reprise elle-même — 4 tentatives, 8 s, 20 s,
+  40 s, délai de 20 s par tentative — n'a pas changé.
 - **Reddit** n'est interrogé qu'avec des identifiants d'application (`REDDIT_CLIENT_ID/SECRET`), conformément à sa
   politique ; sans identifiants, il est ignoré et consigné.
 - **Fenêtre de collecte** : 24 h avant 04:00 UTC, avec 12 h de tolérance en amont (fuseaux et dates RSS approximatives).

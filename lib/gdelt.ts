@@ -30,20 +30,54 @@ const ATTEMPT_TIMEOUT_MS = 20_000;
 const RETRY_WAITS_MS = [8_000, 20_000, 40_000]; // 4 tentatives au total
 
 /**
- * Budget d'attente partagé par toute l'exécution. Une fonction d'arrière-plan Netlify est coupée à
- * 15 minutes, et le pipeline dépense déjà environ 5 minutes en espacement poli (58 requêtes au plus,
- * 13 de repérage + 45 de recoupement, une toutes les 5,2 s) auxquelles s'ajoutent les appels de
- * qualification. Les nouvelles attentes sont donc plafonnées à 3 minutes cumulées : au pire
- * 5 + 3 + ~3 minutes, soit une marge confortable sous la limite.
+ * Plafond des attentes de reprise. Deux modes.
  *
- * Budget épuisé ⇒ on ne retente plus, la requête rend null et l'appelant dégrade proprement
- * (repli sur les flux RSS pour la collecte, cluster non renforcé pour le recoupement).
+ * **Date limite** (fonction d'arrière-plan). Le pipeline annonce l'instant où la fonction sera
+ * coupée, puis, à chaque étape, le temps que le travail restant réclame encore (`setGdeltReserve`).
+ * Une reprise n'est accordée que si elle tient dans
+ *   `date limite − maintenant − travail restant − marge de sécurité`.
+ * Le budget suit donc l'exécution réelle : une qualification plus rapide que prévu rend
+ * immédiatement du temps aux reprises, au lieu de le laisser inutilisé. C'est ce qui remplace le
+ * forfait de 3 minutes fixé à l'avance, trop conservateur d'environ 5 minutes en pratique.
+ *
+ * **Repli** (`npm run harvest`, tests) : sans date limite, rien ne coupe l'exécution ; un pool
+ * global de 3 minutes protège seulement contre un emballement.
+ *
+ * Dans les deux cas, budget épuisé ⇒ on ne retente plus, la requête rend null et l'appelant dégrade
+ * proprement (repli RSS pour la collecte, cluster non renforcé pour le recoupement).
  */
-const RETRY_BUDGET_MS = 180_000;
-let retryBudgetLeftMs = RETRY_BUDGET_MS;
+export const GDELT_MIN_GAP_MS = MIN_GAP;
+const FALLBACK_BUDGET_MS = 180_000;
+const DEFAULT_SAFETY_MS = 75_000;
+
+let deadlineAt: number | null = null;
+let safetyMs = DEFAULT_SAFETY_MS;
+let reserveMs = 0;
+let fallbackBudgetLeftMs = FALLBACK_BUDGET_MS;
 let rateLimitedCount = 0;
 let retryCount = 0;
 let budgetExhausted = false;
+
+/**
+ * Déclare l'instant de coupure de l'exécution (null = aucune limite, mode repli).
+ * `safetyMs` est la marge laissée intacte sous la date limite, jamais consommée par les reprises.
+ */
+export function setGdeltDeadline(at: number | null, opts: { safetyMs?: number } = {}): void {
+  deadlineAt = at;
+  safetyMs = opts.safetyMs ?? DEFAULT_SAFETY_MS;
+  reserveMs = 0;
+}
+
+/** Temps que le travail restant réclame après la requête en cours. Mis à jour à chaque étape. */
+export function setGdeltReserve(ms: number): void {
+  reserveMs = Math.max(0, Math.round(ms));
+}
+
+/** Temps encore disponible pour une attente de reprise, sans entamer la marge de sécurité. */
+function retryBudgetLeftMs(): number {
+  if (deadlineAt === null) return fallbackBudgetLeftMs;
+  return Math.max(0, deadlineAt - Date.now() - reserveMs - safetyMs);
+}
 
 export interface GdeltOptions { timespan?: string; start?: Date; end?: Date; maxrecords?: number; sort?: "hybridrel" | "datedesc" | "tonedesc" }
 
@@ -113,12 +147,17 @@ async function rawQuery(query: string, opts: GdeltOptions): Promise<GdeltArticle
         if (wait === undefined) return null; // les 4 tentatives sont épuisées
         // Coût certain de la tentative suivante : l'attente, puis l'espacement poli.
         const cost = wait + MIN_GAP;
-        if (cost > retryBudgetLeftMs) {
+        const left = retryBudgetLeftMs();
+        if (cost > left) {
           budgetExhausted = true;
-          logFailure(query, attempt, startedAt, "budget d'attente épuisé", { budget_restant_ms: Math.round(retryBudgetLeftMs), cout_requis_ms: cost });
+          logFailure(query, attempt, startedAt, "budget d'attente épuisé", {
+            mode: deadlineAt === null ? "pool de repli" : "date limite",
+            budget_restant_ms: Math.round(left), cout_requis_ms: cost,
+            ...(deadlineAt === null ? {} : { avant_coupure_ms: Math.round(deadlineAt - Date.now()), travail_restant_ms: reserveMs, marge_securite_ms: safetyMs }),
+          });
           return null;
         }
-        retryBudgetLeftMs -= cost;
+        if (deadlineAt === null) fallbackBudgetLeftMs -= cost;
         retryCount++;
         await sleep(wait);
         continue;
@@ -153,12 +192,13 @@ async function rawQuery(query: string, opts: GdeltOptions): Promise<GdeltArticle
 
 /** Compteurs de limitation de débit, pour le rapport consultable depuis /admin. */
 export function gdeltRateLimitStats(): { limites: number; nouvelles_tentatives: number; budget_epuise: boolean; budget_restant_s: number } {
-  return { limites: rateLimitedCount, nouvelles_tentatives: retryCount, budget_epuise: budgetExhausted, budget_restant_s: Math.round(retryBudgetLeftMs / 1000) };
+  return { limites: rateLimitedCount, nouvelles_tentatives: retryCount, budget_epuise: budgetExhausted, budget_restant_s: Math.round(retryBudgetLeftMs() / 1000) };
 }
 
 /** Remet le budget à zéro (rejeu d'une journée dans le même processus, tests). */
 export function resetGdeltRateLimitBudget(): void {
-  retryBudgetLeftMs = RETRY_BUDGET_MS;
+  fallbackBudgetLeftMs = FALLBACK_BUDGET_MS;
+  reserveMs = 0;
   rateLimitedCount = 0;
   retryCount = 0;
   budgetExhausted = false;

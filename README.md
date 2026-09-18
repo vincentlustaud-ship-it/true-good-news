@@ -147,9 +147,12 @@ un clic qui supprime l'enregistrement, en-têtes `List-Unsubscribe` / `List-Unsu
   GDELT a répondu par sa limite de débit et la recherche Bluesky par un 403 : les deux dégradent proprement et sont à
   surveiller dans le rapport après le premier déploiement.
 - GDELT limite le débit à une requête toutes les 5 secondes. Une requête limitée est retentée jusqu'à 4 fois (8 s,
-  20 s, 40 s), sur un budget d'attente de 3 minutes partagé par toute l'exécution pour tenir dans les 15 minutes
-  d'une fonction d'arrière-plan. Le rapport `/admin` indique combien de fois la limite a été atteinte et si le budget
-  a été épuisé : si c'est le cas tous les matins, il faut réduire `maxGdeltCorroboration` plutôt qu'allonger le budget.
+  20 s, 40 s). Ces attentes sont accordées tant qu'elles tiennent avant la coupure de la fonction d'arrière-plan :
+  le pipeline lui annonce l'instant de coupure et, à chaque étape, le temps que le travail restant réclame encore,
+  en gardant 75 secondes de marge intacte. Le rapport `/admin` indique combien de fois la limite a été atteinte et si
+  le budget a été épuisé ; les journaux Netlify donnent, à chaque refus, le temps restant avant coupure, le travail
+  restant estimé et le coût demandé. Un budget épuisé tous les matins signifie qu'il faut réduire
+  `maxGdeltCorroboration` ou `maxLlmCalls`, pas allonger la marge.
 - Le compteur de vues n'est pas atomique (deux incréments simultanés peuvent en perdre un) : c'est un compteur
   d'affichages, présenté comme tel.
 - La limitation de débit (connexion admin, vues, abonnement) est en mémoire : elle repart de zéro à chaque démarrage

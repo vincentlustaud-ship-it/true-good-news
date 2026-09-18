@@ -6,7 +6,7 @@
 import feedsJson from "../data/feeds.json" with { type: "json" };
 import queriesJson from "../data/gdelt-queries.json" with { type: "json" };
 import { readFeed, type FeedDef } from "../lib/rss.ts";
-import { gdeltQuery, gdeltRateLimitStats, toRawArticle } from "../lib/gdelt.ts";
+import { gdeltQuery, gdeltRateLimitStats, setGdeltReserve, toRawArticle, GDELT_MIN_GAP_MS } from "../lib/gdelt.ts";
 import { spotBluesky, spotMastodon, spotReddit, type Spotted } from "../lib/social.ts";
 import { fetchOpenGraph } from "../lib/og.ts";
 import { mapLimit } from "../lib/http.ts";
@@ -16,7 +16,11 @@ import { isAggregator, mediaCountryFor } from "../lib/domains.ts";
 import type { RawArticle } from "./types.ts";
 import type { Reporter } from "./report.ts";
 
-export interface HarvestOptions { date: string; skipSocial?: boolean; skipGdelt?: boolean; limitFeeds?: number; gdeltQueries?: number }
+export interface HarvestOptions {
+  date: string; skipSocial?: boolean; skipGdelt?: boolean; limitFeeds?: number; gdeltQueries?: number;
+  /** Temps que réclament les étapes situées après la collecte, pour le calcul du budget d'attente GDELT. */
+  reserveAfterMs?: number;
+}
 export interface HarvestResult { articles: RawArticle[]; feedsOk: number; feedsFailed: number; gdeltOk: boolean }
 
 const TRACKING = /^(utm_|fbclid|gclid|mc_|ref$|ref_|source$|CMP$|ns_|ito$|xtor$|at_)/i;
@@ -72,7 +76,9 @@ export async function harvest(opts: HarvestOptions, rep: Reporter): Promise<Harv
     const queries = (queriesJson as { queries: Array<{ lang: string; query: string }> }).queries.slice(0, opts.gdeltQueries ?? 99);
     rep.stage("collecte:gdelt", queries.length);
     let gdeltKept = 0, answered = 0;
-    for (const q of queries) {
+    for (const [i, q] of queries.entries()) {
+      // Travail restant : les requêtes de repérage encore à faire, puis tout ce qui suit la collecte.
+      setGdeltReserve((queries.length - 1 - i) * GDELT_MIN_GAP_MS + (opts.reserveAfterMs ?? 0));
       const res = await gdeltQuery(q.query, { start, end, maxrecords: 250, sort: "hybridrel" });
       if (res === null) { rep.note(`GDELT sans réponse pour la requête ${q.lang}`); continue; }
       answered++;

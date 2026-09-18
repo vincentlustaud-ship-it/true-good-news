@@ -10,6 +10,7 @@ import { translateAndEnrich } from "./translate.ts";
 import { Reporter } from "./report.ts";
 import { storage, readOnly, type KV } from "../lib/storage.ts";
 import { addDays } from "../lib/dates.ts";
+import { setGdeltDeadline, GDELT_MIN_GAP_MS } from "../lib/gdelt.ts";
 import type { CandidatesFile, Cluster, RawArticle, RecentTopic, Report, RunStats } from "./types.ts";
 
 export interface PipelineOptions extends HarvestOptions {
@@ -22,15 +23,40 @@ export interface PipelineOptions extends HarvestOptions {
   maxLlmCalls?: number;
   /** Mode développement : saute la qualification (dry-run uniquement, jamais écrit). */
   skipQualify?: boolean;
+  /**
+   * Instant de coupure de l'exécution, en millisecondes epoch (fonction d'arrière-plan Netlify).
+   * Absent = aucune limite de durée, le budget d'attente GDELT retombe sur son pool de repli.
+   */
+  deadlineAt?: number;
   onRaw?: (articles: RawArticle[]) => Promise<void> | void;
 }
 
 export interface PipelineResult { report: Report; candidates: CandidatesFile | null; written: boolean }
 
+/* Estimations pessimistes du travail restant, pour décider si une attente de reprise GDELT tient
+ * avant la coupure. Volontairement hautes : les sous-estimer ferait dépasser la limite, les
+ * surestimer ne coûte que des reprises refusées. Elles sont recalculées à chaque requête par les
+ * agents, à partir du nombre de requêtes qu'il leur reste. */
+const QUALIFY_CONCURRENCY = 8;
+const QUALIFY_PER_CALL_MS = 10_000;  // borne haute observée pour un appel de qualification
+const TAIL_MS = 45_000;              // édition, traduction, Open Graph, écriture du stockage
+function qualifyReserveMs(maxCalls: number): number {
+  return Math.ceil(maxCalls / QUALIFY_CONCURRENCY) * QUALIFY_PER_CALL_MS;
+}
+
 export async function runPipeline(opts: PipelineOptions): Promise<PipelineResult> {
   const rep = new Reporter(opts.date, !!opts.dryRun);
   const kv: KV = opts.dryRun ? readOnly(storage()) : storage();
   if (opts.skipQualify && !opts.dryRun) throw new Error("--skip-qualify n'est autorisé qu'avec --dry-run");
+
+  // Budget d'attente GDELT : adossé à la coupure réelle de la fonction, pas à un forfait.
+  const maxCorro = opts.maxGdeltCorroboration ?? 45;
+  const corroborationReserveMs = maxCorro * GDELT_MIN_GAP_MS;
+  const qualifyMs = opts.skipQualify ? 0 : qualifyReserveMs(opts.maxLlmCalls ?? 150);
+  setGdeltDeadline(opts.deadlineAt ?? null);
+  if (opts.deadlineAt) {
+    rep.alert(`Coupure de l'exécution prévue dans ${Math.round((opts.deadlineAt - Date.now()) / 1000)} s ; le budget d'attente GDELT s'y adosse.`);
+  }
 
   // 1. Collecte
   let articles: RawArticle[];
@@ -40,7 +66,8 @@ export async function runPipeline(opts: PipelineOptions): Promise<PipelineResult
     rep.stage("collecte:rejeu", articles.length); rep.note("collecte rejouée depuis un fichier"); rep.endStage(articles.length);
     gdeltOk = articles.some((a) => a.via === "gdelt");
   } else {
-    const h = await harvest(opts, rep);
+    // Après la collecte restent la qualification, le recoupement GDELT, puis l'édition et la traduction.
+    const h = await harvest({ ...opts, reserveAfterMs: qualifyMs + corroborationReserveMs + TAIL_MS }, rep);
     articles = h.articles; feedsOk = h.feedsOk; feedsFailed = h.feedsFailed; gdeltOk = h.gdeltOk;
     if (opts.onRaw) await opts.onRaw(articles);
   }
@@ -82,7 +109,7 @@ export async function runPipeline(opts: PipelineOptions): Promise<PipelineResult
   }
 
   // 4. Recoupement, passe GDELT ciblée + fact-check (sur les qualifiées seulement)
-  await deepCorroborate(accepted, rep, gdeltOk && !opts.skipGdelt, opts.maxGdeltCorroboration ?? 45);
+  await deepCorroborate(accepted, rep, gdeltOk && !opts.skipGdelt, maxCorro, TAIL_MS);
 
   // 5. Édition : 10 candidates, diversité, anti-répétition 14 jours
   const recentAll = (await kv.getJSON<RecentTopic[]>("state", "recent-topics")) ?? [];

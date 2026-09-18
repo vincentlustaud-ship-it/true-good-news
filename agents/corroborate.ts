@@ -10,7 +10,7 @@
  */
 import { fold, jaccard, sharedCount, strongTerms, tokens, stableId } from "../lib/text.ts";
 import { ownerOf, isAggregator, primarySourceFor, DOI_RE, mediaNameFor, agencyReprint } from "../lib/domains.ts";
-import { gdeltQuery, termsQuery, toRawArticle } from "../lib/gdelt.ts";
+import { gdeltQuery, setGdeltReserve, termsQuery, toRawArticle, GDELT_MIN_GAP_MS } from "../lib/gdelt.ts";
 import { noteRateLimit } from "./harvest.ts";
 import { searchFactChecks } from "../lib/factcheck.ts";
 import { env } from "../lib/env.ts";
@@ -144,11 +144,13 @@ export function corroborationTerms(c: Cluster): string[] {
 }
 
 /** Passe 2 : GDELT ciblé + fact-check pour les clusters qualifiés. */
-export async function deepCorroborate(clusters: Cluster[], rep: Reporter, gdeltEnabled: boolean, maxGdelt: number): Promise<void> {
+export async function deepCorroborate(clusters: Cluster[], rep: Reporter, gdeltEnabled: boolean, maxGdelt: number, reserveAfterMs = 0): Promise<void> {
   rep.stage("recoupement:gdelt", clusters.length);
   if (!env.factcheckKey) rep.note("GOOGLE_FACTCHECK_API_KEY absente : fact-check non interrogé, niveau plafonné à « Bien corroboré »");
   let calls = 0, boosted = 0, unavailable = 0;
   for (const c of clusters) {
+    // Travail restant : les requêtes de recoupement encore permises, puis l'édition et la traduction.
+    setGdeltReserve(Math.max(0, maxGdelt - calls - 1) * GDELT_MIN_GAP_MS + reserveAfterMs);
     const terms = corroborationTerms(c);
     let extra: RawArticle[] = [];
     let interroge = false;

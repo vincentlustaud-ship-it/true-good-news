@@ -17,6 +17,7 @@ export default async (req: Request) => {
   if (!verifyInternal(req, "harvest")) return new Response("non autorisé", { status: 401 });
   const body = await readJson<{ date?: unknown }>(req);
   const date = typeof body?.date === "string" && isIsoDate(body.date) ? body.date : parisDate();
+  const startedAt = Date.now();
   console.log(`harvest-background : début ${date}`);
   try {
     const purged = await purgePending(48);
@@ -37,7 +38,9 @@ export default async (req: Request) => {
     }
   } catch (e) { console.error("nouvel essai d'envoi en échec", e); }
   try {
-    const result = await runPipeline({ date, maxGdeltCorroboration: 45, maxLlmCalls: 150 });
+    // Une fonction d'arrière-plan Netlify est coupée à 15 minutes ; on part de l'entrée du gestionnaire,
+    // ce qui laisse au pipeline la mesure exacte du temps qu'il lui reste.
+    const result = await runPipeline({ date, maxGdeltCorroboration: 45, maxLlmCalls: 150, deadlineAt: startedAt + 15 * 60_000 });
     console.log(`harvest-background : fin ${date} — ${result.candidates?.candidates.length ?? 0} candidates, alertes : ${result.report.alerts.join(" | ") || "aucune"}`);
   } catch (e) {
     console.error("harvest-background : erreur", e);
