@@ -35,11 +35,22 @@ Les sources francophones natives sont prioritaires : elles évitent un aller-ret
 
 ## Réseaux sociaux — repérage uniquement
 
-Autorisés parce que leurs API sont ouvertes et gratuites :
+Autorisés parce que leurs API sont **gratuites et accessibles sans contrat commercial**. Certaines
+demandent de s'identifier, ce qui ne change rien au principe : l'accès reste ouvert à qui le demande,
+sans négociation ni paiement.
 
-- **Bluesky** (AT Protocol, API publique)
-- **Mastodon** (API publique des instances)
-- **Reddit** (API gratuite avec identifiants d'application)
+- **Bluesky** (AT Protocol) — **authentification requise**. La recherche de posts
+  (`app.bsky.feed.searchPosts`) était ouverte sans identification ; elle ne l'est plus. Vérifié le
+  18 septembre 2026 : l'hôte public répond toujours pour les appels de lecture simple
+  (`app.bsky.actor.getProfile` → 200), mais la recherche renvoie 403, et la même requête sur
+  `bsky.social` répond `AuthMissing`. On s'identifie donc avec un **mot de passe d'application**
+  (gratuit, révocable, créé depuis les réglages du compte — jamais le mot de passe du compte
+  lui-même) : `BLUESKY_IDENTIFIER` et `BLUESKY_APP_PASSWORD`.
+- **Mastodon** (API publique des instances) — sans authentification.
+- **Reddit** (API gratuite avec identifiants d'application) — authentification requise.
+
+Sans identifiants, le réseau concerné est simplement ignoré et la raison est consignée dans le
+rapport. Aucun contournement : on ne cherche pas d'accès non authentifié à ce qui n'en offre plus.
 
 Non accessibles : **X, Facebook, Instagram, TikTok, YouTube commentaires**. Leurs API sont fermées ou
 payantes et le scraping viole leurs CGU. Ce n'est pas un choix éditorial de notre part, c'est une

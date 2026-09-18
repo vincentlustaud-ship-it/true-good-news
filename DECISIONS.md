@@ -124,7 +124,9 @@ Ce journal consigne les arbitrages que les documents du cahier des charges ne co
   requête sur `bsky.social` répond `AuthMissing`. Ce n'était donc ni une panne réseau ni un User-Agent refusé.
   On passe par un mot de passe d'application, gratuit, exactement comme Reddit : `BLUESKY_IDENTIFIER` et
   `BLUESKY_APP_PASSWORD`. Sans identifiants, Bluesky est ignoré et consigné comme tel, jamais présenté comme une
-  panne. **À arbitrer par le porteur du projet** : faut-il amender `SOURCES.md`, qui affirme que ces API sont ouvertes ?
+  panne. `SOURCES.md` a été amendé sur demande du porteur du projet : le critère d'autorisation n'est plus « API
+  ouverte » mais « API gratuite et accessible sans contrat commercial », l'authentification éventuelle étant précisée
+  réseau par réseau. Le comportement du code est inchangé.
 - **Reddit** n'est interrogé qu'avec des identifiants d'application (`REDDIT_CLIENT_ID/SECRET`), conformément à sa
   politique ; sans identifiants, il est ignoré et consigné.
 - **Fenêtre de collecte** : 24 h avant 04:00 UTC, avec 12 h de tolérance en amont (fuseaux et dates RSS approximatives).
