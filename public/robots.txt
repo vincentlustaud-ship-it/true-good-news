@@ -1,0 +1,7 @@
+# True Good News — https://truegoodnewstoday.com
+# Notre collecteur s'identifie « TrueGoodNews/1.0 (+https://truegoodnewstoday.com/robots) »,
+# lit le robots.txt de chaque site avant tout accès et ne récupère que titre, résumé court
+# et vignette Open Graph en lien direct. Contact : contact@truegoodnewstoday.com
+User-agent: *
+Disallow: /admin
+Disallow: /api/

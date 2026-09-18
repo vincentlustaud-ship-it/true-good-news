@@ -3,8 +3,102 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[functions]
+  node_bundler = "esbuild"
+
+# Pipeline quotidien : 04:00 UTC = 06:00 Paris (05:00 en heure d'hiver).
+# La fonction planifiée délègue à harvest-background (15 min) car une fonction
+# planifiée est limitée à quelques secondes.
+[functions."daily-harvest"]
+  schedule = "0 4 * * *"
+
+# ---- Routes API (les fonctions déclarent aussi leur `path`, ceci est une ceinture) ----
+[[redirects]]
+  from = "/api/news"
+  to = "/.netlify/functions/api-news"
+  status = 200
+[[redirects]]
+  from = "/api/view"
+  to = "/.netlify/functions/api-view"
+  status = 200
+[[redirects]]
+  from = "/api/subscribe"
+  to = "/.netlify/functions/api-subscribe"
+  status = 200
+[[redirects]]
+  from = "/api/confirm"
+  to = "/.netlify/functions/api-confirm"
+  status = 200
+[[redirects]]
+  from = "/api/unsubscribe"
+  to = "/.netlify/functions/api-unsubscribe"
+  status = 200
+[[redirects]]
+  from = "/api/admin/login"
+  to = "/.netlify/functions/admin-login"
+  status = 200
+[[redirects]]
+  from = "/api/admin/logout"
+  to = "/.netlify/functions/admin-logout"
+  status = 200
+[[redirects]]
+  from = "/api/admin/candidates"
+  to = "/.netlify/functions/admin-candidates"
+  status = 200
+[[redirects]]
+  from = "/api/admin/publish"
+  to = "/.netlify/functions/admin-publish"
+  status = 200
+[[redirects]]
+  from = "/api/admin/run"
+  to = "/.netlify/functions/admin-run"
+  status = 200
+[[redirects]]
+  from = "/api/admin/correction"
+  to = "/.netlify/functions/admin-correction"
+  status = 200
+
+# SPA : toutes les autres routes servent index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ---- En-têtes de sécurité (SECURITE-CONFIDENTIALITE.md) ----
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"
+    Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "no-referrer"
+    Permissions-Policy = "geolocation=(), camera=(), microphone=(), interest-cohort=()"
+    X-Frame-Options = "DENY"
+
+[[headers]]
+  for = "/admin"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
 [[headers]]
   for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/fonts/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 

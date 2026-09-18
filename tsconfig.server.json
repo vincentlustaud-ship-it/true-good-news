@@ -1,24 +1,22 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.server.tsbuildinfo",
     "target": "es2023",
-    "lib": ["ES2023", "DOM", "DOM.Iterable"],
-    "module": "esnext",
-    "types": ["vite/client", "vite-plugin-pwa/client"],
-    "allowArbitraryExtensions": true,
-    "resolveJsonModule": true,
+    "lib": ["ES2023"],
+    "types": ["node"],
     "skipLibCheck": true,
-    "moduleResolution": "bundler",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "resolveJsonModule": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
-    "jsx": "react-jsx",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "shared"]
+  "include": ["agents", "lib", "netlify", "scripts", "data/*.json"]
 }
